@@ -3,529 +3,294 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Master Food | ماستر فود</title>
+<title>ماستر فود | مصنع شركة الفوزان للصناعات الغذائية</title>
 <meta name="description" content="مصنع شركة الفوزان للصناعات الغذائية – ماستر فود، القصيم – بريدة. نشاء الذرة، شراب الجلوكوز، جنين الذرة، جلوتوفيد 16%، جلوتين ميل 60%.">
-<meta name="theme-color" content="#0e4a35">
+<meta name="theme-color" content="#0f4d36">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=IBM+Plex+Sans:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" imagesrcset="https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
-<script>document.documentElement.classList.add('js');try{var l=localStorage.getItem('mf-lang');if(l==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('mf-lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main"><span class="ar">تخطَّ إلى المحتوى</span><span class="en">Skip to content</span></a>
 
-<!-- ====== SVG sprite: kernel geometry + product glyphs ====== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="g-hull" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6cf57"/><stop offset=".55" stop-color="#e2a414"/><stop offset="1" stop-color="#b87c08"/>
-    </linearGradient>
-    <linearGradient id="g-endo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1ead6"/>
-    </linearGradient>
-    <linearGradient id="g-germ" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f3d57f"/><stop offset="1" stop-color="#d2a33a"/>
-    </linearGradient>
-    <linearGradient id="g-syrup" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f6c64a" stop-opacity=".75"/><stop offset="1" stop-color="#c98a0c" stop-opacity=".9"/>
-    </linearGradient>
-  </defs>
-  <symbol id="mark" viewBox="0 0 40 40">
-    <circle cx="20" cy="20" r="19" style="fill:var(--green)"/>
-    <path d="M20 8c6 0 9.5 4 9.5 9.2 0 6.4-4.4 12.4-8.3 15.2a2 2 0 0 1-2.4 0C14.9 29.6 10.5 23.6 10.5 17.2 10.5 12 14 8 20 8Z" style="fill:var(--corn)"/>
-    <path d="M20 22c2.2 0 3.3 2.6 3 5.4-.3 2.3-1.5 3.6-3 3.8-1.5-.2-2.7-1.5-3-3.8-.3-2.8.8-5.4 3-5.4Z" style="fill:var(--green)" opacity=".55"/>
-  </symbol>
-  <symbol id="p-starch" viewBox="0 0 64 64">
-    <path d="M4 52C16 34 25 24 32 24s16 10 28 28Z" style="fill:var(--white);stroke:var(--steel);stroke-width:1.2"/>
-    <g style="fill:var(--steel)" opacity=".45"><circle cx="30" cy="34" r="1"/><circle cx="37" cy="40" r="1"/><circle cx="24" cy="44" r="1"/><circle cx="42" cy="47" r="1"/><circle cx="18" cy="49" r="1"/><circle cx="33" cy="46" r="1"/></g>
-    <g style="fill:var(--steel)" opacity=".35"><circle cx="46" cy="18" r="1.2"/><circle cx="52" cy="26" r="1"/><circle cx="40" cy="12" r=".9"/></g>
-  </symbol>
-  <symbol id="p-glucose" viewBox="0 0 64 64">
-    <path d="M32 6S13 29 13 41a19 19 0 0 0 38 0C51 29 32 6 32 6Z" fill="url(#g-syrup)"/>
-    <path d="M22 40c0 6 4 10 9 11" style="fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round" opacity=".6"/>
-  </symbol>
-  <symbol id="p-germ" viewBox="0 0 64 64">
-    <path d="M32 8c10 0 15 11 14 25-1 12-7 22-14 23-7-1-13-11-14-23-1-14 4-25 14-25Z" fill="url(#g-germ)"/>
-    <path d="M32 18c3 6 3 22 0 30" style="fill:none;stroke:#a87a16;stroke-width:1.4;stroke-linecap:round" opacity=".6"/>
-  </symbol>
-  <symbol id="p-feed" viewBox="0 0 64 64">
-    <g style="fill:#c99a4a"><rect x="10" y="30" width="16" height="9" rx="4.5" transform="rotate(-18 18 34)"/><rect x="30" y="36" width="16" height="9" rx="4.5" transform="rotate(12 38 40)"/><rect x="20" y="44" width="16" height="9" rx="4.5"/><rect x="36" y="20" width="16" height="9" rx="4.5" transform="rotate(-30 44 24)"/><rect x="16" y="16" width="14" height="8" rx="4" transform="rotate(24 23 20)"/></g>
-    <g style="fill:#8f6b2e" opacity=".5"><circle cx="18" cy="33" r="1"/><circle cx="39" cy="40" r="1"/><circle cx="28" cy="48" r="1"/></g>
-  </symbol>
-  <symbol id="p-meal" viewBox="0 0 64 64">
-    <g style="fill:#e0a526"><circle cx="20" cy="40" r="4"/><circle cx="30" cy="44" r="4.5"/><circle cx="41" cy="40" r="4"/><circle cx="25" cy="31" r="3.6"/><circle cx="36" cy="31" r="4"/><circle cx="46" cy="47" r="3.4"/><circle cx="15" cy="48" r="3.2"/><circle cx="31" cy="22" r="3.2"/></g>
-    <g style="fill:#b97a0a"><circle cx="38" cy="51" r="3.4"/><circle cx="22" cy="51" r="3"/><circle cx="44" cy="30" r="2.6"/></g>
-  </symbol>
-  <symbol id="kernel" viewBox="0 0 200 262">
-    <path d="M100 6c56 0 90 38 90 90 0 64-40 126-78 156-6 5-18 5-24 0C50 222 10 160 10 96 10 44 44 6 100 6Z" fill="url(#g-hull)"/>
-    <ellipse cx="72" cy="62" rx="24" ry="34" transform="rotate(-24 72 62)" fill="#fff" opacity=".35"/>
-  </symbol>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Temporary mark. Replace with the official Master Food logo file (assets/img/logo.svg). -->
+  <symbol id="mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#0f4d36"/><circle cx="20" cy="20" r="18" fill="none" stroke="#d9a21b" stroke-opacity=".5"/><path d="M20 8c6 0 9.5 4 9.5 9.2 0 6.4-4.4 12.4-8.3 15.2a2 2 0 0 1-2.4 0C14.9 29.6 10.5 23.6 10.5 17.2 10.5 12 14 8 20 8Z" fill="#d9a21b"/><path d="M20 22c2.2 0 3.3 2.6 3 5.4-.3 2.3-1.5 3.6-3 3.8-1.5-.2-2.7-1.5-3-3.8-.3-2.8.8-5.4 3-5.4Z" fill="#0f4d36" opacity=".5"/></symbol>
 </svg>
 
-<!-- ====== Header ====== -->
+<!-- ============ Header ============ -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr__in">
     <a class="logo" href="#home" aria-label="Master Food">
       <svg aria-hidden="true"><use href="#mark"/></svg>
-      <span class="logo__txt"><b>MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan For Food Industries Factory</span></small></span>
+      <span><b>MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan Food Industries Factory</span></small></span>
     </a>
-    <nav class="nav" id="nav" aria-label="Primary">
+    <nav class="nav" id="nav" aria-label="Main">
       <ul>
         <li><a href="#home"><span class="ar">الرئيسية</span><span class="en">Home</span></a></li>
         <li><a href="#about"><span class="ar">من نحن</span><span class="en">About</span></a></li>
-        <li><a href="#products"><span class="ar">منتجاتنا</span><span class="en">Products</span></a></li>
+        <li><a href="#products"><span class="ar">المنتجات</span><span class="en">Products</span></a></li>
         <li><a href="#quality"><span class="ar">الجودة</span><span class="en">Quality</span></a></li>
-        <li><a href="#applications"><span class="ar">التطبيقات</span><span class="en">Applications</span></a></li>
-        <li><a href="#vision"><span class="ar">رؤيتنا</span><span class="en">Vision</span></a></li>
         <li><a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact</span></a></li>
+        <li class="nav__cta"><a class="btn" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a></li>
       </ul>
     </nav>
-    <div class="hdr__tools">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="ar" aria-pressed="true">AR</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <button class="btn btn--sm hdr__cta" type="button" data-open="inquiry"><span class="ar">طلب استفسار</span><span class="en">Request inquiry</span></button>
-      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+    <div class="tools">
+      <button class="lang" id="lang" type="button" aria-label="Switch language"><span class="ar">EN</span><span class="en">عربي</span></button>
+      <a class="btn btn--sm" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<!-- ====== Journey rail: the process line that runs through the page ====== -->
-<ol class="rail" id="rail" aria-label="Journey">
-  <li class="rail__fill" aria-hidden="true"></li>
-  <li><a href="#home"><span class="ar">00 الذرة</span><span class="en">00 Corn</span><i></i></a></li>
-  <li><a href="#about"><span class="ar">01 المادة الخام</span><span class="en">01 Raw material</span><i></i></a></li>
-  <li><a href="#process"><span class="ar">02–04 المعالجة</span><span class="en">02–04 Processing</span><i></i></a></li>
-  <li><a href="#products"><span class="ar">05 المنتجات</span><span class="en">05 Products</span><i></i></a></li>
-  <li><a href="#applications"><span class="ar">التطبيقات</span><span class="en">Applications</span><i></i></a></li>
-  <li><a href="#quality"><span class="ar">06 الجودة</span><span class="en">06 Quality</span><i></i></a></li>
-  <li><a href="#storage"><span class="ar">07 التخزين</span><span class="en">07 Storage</span><i></i></a></li>
-  <li><a href="#vision"><span class="ar">الرؤية والقيم</span><span class="en">Vision &amp; values</span><i></i></a></li>
-  <li><a href="#contact"><span class="ar">08 إلى العميل</span><span class="en">08 To the client</span><i></i></a></li>
-</ol>
-<div class="progress" aria-hidden="true"><i></i></div>
-
 <main id="main">
 
-<!-- ====== 00 HERO — the raw kernel, which then opens into its parts ====== -->
-<section class="scene" id="home" data-stage="0" aria-labelledby="hero-title">
-  <div class="scene__pin">
-    <div class="scene__bg"></div><div class="scene__grid"></div>
-
-    <div class="hero__copy wrap">
-      <p class="hero__eyebrow">FROM CORN TO FOOD INGREDIENTS</p>
-      <h1 class="hero__title" id="hero-title">
-        <span class="ar">من الذرة<span class="dot">.</span><br><em>إلى مكونات غذائية أساسية</em><span class="dot">.</span></span>
-        <span class="en">From Corn<span class="dot">.</span><br><em>To Essential Ingredients</em><span class="dot">.</span></span>
-      </h1>
-      <p class="hero__sub">
-        <span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود. أُسِّس المصنع لإنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء، لاستخدامه في العديد من الصناعات الغذائية.</span>
-        <span class="en">Alfozan For Food Industries Factory – Master Food. The factory was established to produce starch and glucose extracted from yellow corn, used across many food industries.</span>
-      </p>
+<!-- ============ 1. Hero ============ -->
+<section class="hero" id="home">
+  <div class="hero__media"><img src="https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/547264/pexels-photo-547264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" alt="حبوب الذرة الصفراء" loading="eager" decoding="async" fetchpriority="high"></div>
+  <div class="kernels" aria-hidden="true">
+    <i style="top:22%;left:8%;animation-delay:.2s;transform:rotate(-20deg)"></i>
+    <i style="top:34%;left:15%;animation-delay:.35s;width:11px;height:14px"></i>
+    <i style="top:18%;left:22%;animation-delay:.5s;width:9px;height:12px;opacity:.7"></i>
+  </div>
+  <div class="wrap hero__in">
+    <div class="hero__logo">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span><b>MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan Food Industries Factory</span></small></span>
     </div>
-
-    <div class="kernel" aria-hidden="true">
-      <svg viewBox="0 0 200 262">
-        <g class="k-endo">
-          <path d="M100 22c44 0 72 32 72 76 0 44-24 80-48 100H76C52 178 28 142 28 98c0-44 28-76 72-76Z" fill="url(#g-endo)" stroke="#e7dcc0"/>
-          <g fill="#d9cfb4" opacity=".7"><circle cx="80" cy="70" r="1.6"/><circle cx="118" cy="84" r="1.4"/><circle cx="96" cy="112" r="1.8"/><circle cx="130" cy="126" r="1.3"/><circle cx="70" cy="132" r="1.5"/><circle cx="104" cy="150" r="1.2"/><circle cx="140" cy="100" r="1.1"/><circle cx="60" cy="100" r="1.2"/></g>
-        </g>
-        <path class="k-germ" d="M100 146c22 0 32 26 28 54-4 24-16 38-28 40-12-2-24-16-28-40-4-28 6-54 28-54Z" fill="url(#g-germ)"/>
-        <path class="k-tip" d="M86 246h28l-7 14h-14Z" fill="#a9884f"/>
-        <g class="k-hull">
-          <path d="M100 6c56 0 90 38 90 90 0 64-40 126-78 156-6 5-18 5-24 0C50 222 10 160 10 96 10 44 44 6 100 6Z" fill="url(#g-hull)"/>
-          <path d="M100 22c-30 0-54 20-60 52" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
-          <ellipse class="k-shine" cx="70" cy="64" rx="22" ry="34" transform="rotate(-24 70 64)" fill="#fff" opacity=".6"/>
-          <path d="M100 150c16 0 24 20 22 42" fill="none" stroke="#a36f06" stroke-width="1.5" opacity=".35"/>
-        </g>
-      </svg>
+    <h1><span class="ar">مكونات غذائية <em>من الذرة</em>، بجودة يُعتمد عليها.</span><span class="en">Food ingredients <em>from corn</em>, with quality you can rely on.</span></h1>
+    <p><span class="ar">ننتج في مصنعنا بالقصيم – بريدة النشاء والجلوكوز المستخلص من الذرة الصفراء، لاستخدامه في العديد من الصناعات الغذائية.</span><span class="en">At our factory in Buraydah, Qassim, we produce starch and glucose extracted from yellow corn for use across many food industries.</span></p>
+    <div class="hero__ctas">
+      <a class="btn btn--gold" href="#products"><span class="ar">استكشف المنتجات</span><span class="en">Explore products</span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="btn btn--light" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a>
     </div>
-
-    <div class="anat" aria-hidden="true">
-      <div class="anat__lbl anat__lbl--endo"><span class="mono">Endosperm</span><b><span class="ar">الإندوسبيرم</span><span class="en">Endosperm</span></b><small><span class="ar">الجزء الأكبر من الحبة — ومنه يُستخلص النشاء</span><span class="en">The largest part of the kernel — the source of starch</span></small></div>
-      <div class="anat__lbl anat__lbl--hull"><span class="mono">Pericarp</span><b><span class="ar">القشرة الخارجية</span><span class="en">Outer hull</span></b><small><span class="ar">غلاف حبة الذرة</span><span class="en">The kernel's outer layer</span></small></div>
-      <div class="anat__lbl anat__lbl--germ"><span class="mono">Germ</span><b><span class="ar">الجنين</span><span class="en">Germ</span></b><small><span class="ar">يُفصل ليصبح منتج: جنين الذرة</span><span class="en">Separated as a product: Corn Germ</span></small></div>
-      <p class="anat__cap"><span class="ar">رسم توضيحي مبسّط لتركيب حبة الذرة — كل جزء منها يقود إلى منتج</span><span class="en">Simplified illustration of a corn kernel — each part leads to a product</span></p>
+    <div class="hero__tags" aria-label="Products">
+      <span><span class="ar">نشاء الذرة</span><span class="en">Corn Starch</span></span>
+      <span><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></span>
+      <span><span class="ar">جنين الذرة</span><span class="en">Corn Germ</span></span>
+      <span><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></span>
+      <span><span class="ar">جلوتين ميل 60%</span><span class="en">Gluten Meal 60%</span></span>
     </div>
-
-    <div class="hero__ctas" id="heroCtas">
-      <a class="btn btn--lg" href="#products"><span class="ar">استكشف منتجاتنا</span><span class="en">Explore our products</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
-      <a class="btn btn--lg btn--ghost" href="#contact"><span class="ar">تواصل مع فريقنا</span><span class="en">Contact our team</span></a>
-    </div>
-    <div class="scroll-cue" aria-hidden="true"><span>SCROLL</span></div>
   </div>
 </section>
 
-<!-- ====== 01 ABOUT — corn as raw material ====== -->
-<section class="section about" id="about" data-stage="1" aria-labelledby="about-t">
-  <div class="wrap about__grid">
+<!-- ============ 2. About ============ -->
+<section class="section section--white" id="about">
+  <div class="wrap split">
     <div class="rv">
-      <span class="stage"><b>01</b><span class="ar">الذرة كمادة خام · من نحن</span><span class="en">Corn as raw material · About us</span></span>
-      <h2 class="h2" id="about-t"><span class="ar">كل شيء يبدأ من حبة ذرة صفراء.</span><span class="en">Everything starts with a yellow corn kernel.</span></h2>
-      <p class="lead">
-        <span class="ar">مصنع شركة الفوزان للصناعات الغذائية هو أحد مصانع شركة الفوزان للصناعات الغذائية المساهمة بالمملكة العربية السعودية، والتي تأسست منذ أكثر من 40 عامًا لمواكبة العصر في التطور الصناعي.</span>
-        <span class="en">Alfozan For Food Industries Factory is one of the factories of Al-Fawzan Food Industries Shareholding Company in the Kingdom of Saudi Arabia, established more than 40 years ago to keep pace with industrial development.</span>
-      </p>
-      <p class="lead" style="margin-top:16px">
-        <span class="ar">أُسِّس المصنع لإنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء، والذي يدخل في العديد من الصناعات الغذائية.</span>
-        <span class="en">The factory was established to produce starch and glucose extracted from yellow corn, which is used in many food industries.</span>
-      </p>
-      <dl class="facts">
-        <div class="fact"><dt><span class="ar">العلامة</span><span class="en">Brand</span></dt><dd>Master Food · <span class="ar">ماستر فود</span><span class="en">Master Food</span></dd></div>
-        <div class="fact"><dt><span class="ar">الشركة الأم</span><span class="en">Parent company</span></dt><dd><span class="ar">شركة الفوزان للصناعات الغذائية المساهمة</span><span class="en">Al-Fawzan Food Industries Shareholding Company</span></dd></div>
-        <div class="fact"><dt><span class="ar">المادة الخام</span><span class="en">Raw material</span></dt><dd><span class="ar">الذرة الصفراء</span><span class="en">Yellow corn</span></dd></div>
-        <div class="fact"><dt><span class="ar">الموقع</span><span class="en">Location</span></dt><dd><span class="ar">المملكة العربية السعودية – القصيم – بريدة</span><span class="en">Saudi Arabia – Qassim – Buraydah</span></dd></div>
-      </dl>
+      <span class="eyebrow"><span class="ar">من نحن</span><span class="en">About us</span></span>
+      <h2 class="title"><span class="ar">عن Master Food</span><span class="en">About Master Food</span></h2>
+      <p class="lead"><span class="ar">مصنع شركة الفوزان للصناعات الغذائية هو أحد مصانع شركة الفوزان للصناعات الغذائية المساهمة بالمملكة العربية السعودية، التي تأسست منذ أكثر من 40 عامًا لمواكبة التطور الصناعي. أُسِّس المصنع لإنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء.</span><span class="en">Alfozan Food Industries Factory is one of the factories of Al-Fawzan Food Industries Shareholding Company in Saudi Arabia, established more than 40 years ago to keep pace with industrial development. The factory was set up to produce starch and glucose extracted from yellow corn.</span></p>
+      <ul class="checks">
+        <li><span class="ar">إنتاج النشاء والجلوكوز من الذرة الصفراء</span><span class="en">Starch and glucose produced from yellow corn</span></li>
+        <li><span class="ar">منتجات تدخل في العديد من الصناعات الغذائية</span><span class="en">Products used across many food industries</span></li>
+        <li><span class="ar">رقابة جودة في جميع مراحل التشغيل</span><span class="en">Quality control at every stage of operation</span></li>
+      </ul>
+      <button class="btn btn--line" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreText"><span class="ar">اعرف المزيد</span><span class="en">Learn more</span></button>
+      <div class="more" id="moreText" hidden>
+        <p><span class="ar">نجاحنا يعتمد على تقديم منتجات عالية الجودة تلبي توقعات العملاء وتتجاوزها، وعلى ضمان جودة وسلامة جميع المنتجات المصنّعة. ولهذا نعتمد نظام رقابة دورية في جميع مراحل التشغيل، لاكتشاف أي انحرافات مبكرًا واتخاذ الإجراءات اللازمة لحماية صحة المستهلك وجودة المنتج وفق المعايير الدولية.</span><span class="en">Our success depends on providing high-quality products that meet and exceed customer expectations, and on ensuring the quality and food safety of every product we manufacture. That is why we run periodic monitoring across all stages of operation, to catch any deviation early and take the necessary measures to protect consumer health and product quality in line with international standards.</span></p>
+      </div>
     </div>
-    <figure class="origin rv" style="margin:0">
-      <canvas id="grainCanvas" aria-label="Yellow corn kernels" role="img"></canvas>
-      <figcaption class="origin__tag"><b>RAW MATERIAL · 01</b><span class="ar">الذرة الصفراء</span><span class="en">Yellow corn</span></figcaption>
-    </figure>
+    <figure class="photo rv" style="margin:0"><img src="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(max-width: 860px) 100vw, 50vw" alt="معدات تصنيع من الستانلس ستيل" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
-<!-- ====== 02–04 PROCESS — من الذرة إلى المنتج ====== -->
-<section class="section process" id="process" data-stage="2" aria-labelledby="proc-t">
+<!-- ============ 3. Products ============ -->
+<section class="section" id="products">
   <div class="wrap">
-    <div class="rv">
-      <span class="stage"><b>02 — 04</b><span class="ar">الاستلام · المعالجة · الفصل</span><span class="en">Receiving · Processing · Separation</span></span>
-      <h2 class="h2" id="proc-t"><span class="ar">من الذرة إلى المنتج</span><span class="en">From corn to product</span></h2>
-      <p class="lead"><span class="ar">خط واحد يربط الحبة بالعميل. اختر أي مرحلة لتتبّع مسار المادة داخل المصنع.</span><span class="en">One line connects the kernel to the client. Pick any stage to follow the material through the factory.</span></p>
-    </div>
-    <div class="pline" id="pline">
-      <div class="pline__track" role="tablist" aria-label="Process stages">
-        <div class="pline__pipe" aria-hidden="true"><div class="pline__flow"></div></div>
-        <!-- nodes are rendered by main.js from PROCESS data; static fallback below -->
-      </div>
-    </div>
-    <div class="ppanel" id="ppanel" aria-live="polite">
-      <div class="ppanel__n">00</div>
-      <div><h3><span class="ar">الذرة</span><span class="en">Corn</span></h3><p><span class="ar">المادة الخام الأساسية للمصنع: الذرة الصفراء.</span><span class="en">The factory's core raw material: yellow corn.</span></p></div>
-      <div class="ppanel__ctrl"></div>
-    </div>
-    <p class="note"><span class="ar">* مخطط توضيحي عام لمراحل العمل، وليس وصفًا هندسيًا تفصيليًا لخطوط الإنتاج.</span><span class="en">* A general illustration of the work stages, not a detailed engineering description of the production lines.</span></p>
-  </div>
-</section>
-
-<!-- ====== 05 PRODUCTS — corn branches into five products ====== -->
-<section class="section" id="products" data-stage="3" aria-labelledby="prod-t">
-  <div class="wrap">
-    <div class="rv">
-      <span class="stage"><b>05</b><span class="ar">المنتجات</span><span class="en">Products</span></span>
-      <h2 class="h2" id="prod-t"><span class="ar">حبة واحدة. خمسة منتجات.</span><span class="en">One kernel. Five products.</span></h2>
-      <p class="lead"><span class="ar">بعد المعالجة والفصل، تتحول الذرة إلى مجموعة من المنتجات. مرّر أو اضغط على أي منتج لاستكشافه.</span><span class="en">After processing and separation, corn becomes a family of products. Hover or tap any product to explore it.</span></p>
-    </div>
-    <div class="pmap__grid">
-      <div class="pmap" id="pmap">
-        <svg class="pmap__lines" viewBox="0 0 100 100" aria-hidden="true">
-          <circle class="orbit" cx="50" cy="50" r="40" vector-effect="non-scaling-stroke"/>
-        </svg>
-        <div class="pmap__core" aria-hidden="true">
-          <div><svg viewBox="0 0 200 262" style="margin-inline:auto"><use href="#kernel"/></svg><b><span class="ar">الذرة</span><span class="en">Corn</span></b><br><small>CORN</small></div>
-        </div>
-      </div>
-      <div class="pinfo" id="pinfo" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 05.1 STARCH — kernel becomes white powder ====== -->
-<section class="section feature starch" id="starch" data-stage="3" aria-labelledby="starch-t">
-  <div class="wrap feature__grid">
-    <div class="starch__stage"><canvas id="starchCanvas" role="img" aria-label="Corn kernel turning into white starch powder"></canvas></div>
-    <div class="rv">
-      <span class="stage"><b>05.1</b>CORN STARCH</span>
-      <h2 class="h2" id="starch-t"><span class="ar">نشاء الذرة</span><span class="en">Corn Starch</span></h2>
-      <p class="lead"><span class="ar">مسحوق أبيض طبيعي، عديم الرائحة، ذو طعم متعادل، يُستخلص من حبوب الذرة.</span><span class="en">A natural white powder, odorless, with a neutral taste, obtained from corn kernels.</span></p>
-      <div class="props">
-        <div class="prop"><small><span class="ar">الشكل</span><span class="en">Form</span></small><b><span class="ar">مسحوق أبيض</span><span class="en">White powder</span></b></div>
-        <div class="prop"><small><span class="ar">الرائحة</span><span class="en">Odor</span></small><b><span class="ar">عديم الرائحة</span><span class="en">Odorless</span></b></div>
-        <div class="prop"><small><span class="ar">الطعم</span><span class="en">Taste</span></small><b><span class="ar">متعادل</span><span class="en">Neutral</span></b></div>
-      </div>
-      <div class="words" aria-hidden="true"><span>Purity</span><span>Consistency</span><span>Precision</span></div>
-      <p style="margin-top:32px"><button class="btn" type="button" data-product="corn-starch"><span class="ar">صفحة المنتج</span><span class="en">Product page</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button></p>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 05.2 GLUCOSE — clear golden liquid ====== -->
-<section class="section feature glucose" id="glucose" data-stage="3" aria-labelledby="glu-t">
-  <div class="wrap feature__grid">
-    <div class="rv">
-      <span class="stage"><b>05.2</b>GLUCOSE SYRUP</span>
-      <h2 class="h2" id="glu-t"><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></h2>
-      <p class="lead"><span class="ar">شراب سائل مركّز ومنقّى من السكر الطبيعي، يُحصل عليه من نشاء الذرة بالتحلل المائي الحمضي أو الإنزيمي.</span><span class="en">A concentrated, purified liquid syrup of natural sugar, obtained from corn starch by acidic or enzymatic hydrolysis.</span></p>
-      <div class="props">
-        <div class="prop"><small><span class="ar">المصدر</span><span class="en">Source</span></small><b><span class="ar">نشاء الذرة</span><span class="en">Corn starch</span></b></div>
-        <div class="prop"><small><span class="ar">الحلاوة</span><span class="en">Sweetness</span></small><b><span class="ar">متوسطة، تُبرز النكهات الفاكهية</span><span class="en">Medium, enhances fruity flavors</span></b></div>
-        <div class="prop"><small><span class="ar">اللزوجة</span><span class="en">Viscosity</span></small><b><span class="ar">متوسطة</span><span class="en">Medium</span></b></div>
-      </div>
-      <p style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
-        <button class="btn" type="button" data-product="glucose-syrup"><span class="ar">صفحة المنتج</span><span class="en">Product page</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
-        <a class="btn btn--ghost" href="#applications"><span class="ar">استخدامات شراب الجلوكوز</span><span class="en">Glucose syrup uses</span></a>
-      </p>
-    </div>
-    <div class="vessel" id="vessel" aria-hidden="true">
-      <svg viewBox="0 0 300 400">
-        <defs>
-          <clipPath id="beaker"><path d="M70 40h160v20l-10 8v272a30 30 0 0 1-30 30H110a30 30 0 0 1-30-30V68l-10-8Z"/></clipPath>
-        </defs>
-        <g clip-path="url(#beaker)">
-          <rect x="0" y="0" width="300" height="400" style="fill:var(--white)" opacity=".6"/>
-          <g class="liquid">
-            <path class="wave2" d="M0 120q25-10 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0V520H0Z" fill="#f2c24a" opacity=".5"/>
-            <path class="wave" d="M0 126q25-8 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0V520H0Z" fill="url(#g-syrup)"/>
-            <circle class="bubble" cx="130" cy="340" r="3" fill="#fff" opacity=".6"/>
-            <circle class="bubble" cx="170" cy="320" r="2" fill="#fff" opacity=".6" style="animation-delay:2s"/>
-            <circle class="bubble" cx="150" cy="350" r="2.5" fill="#fff" opacity=".6" style="animation-delay:4s"/>
-          </g>
-        </g>
-        <path d="M70 40h160v20l-10 8v272a30 30 0 0 1-30 30H110a30 30 0 0 1-30-30V68l-10-8Z" fill="none" style="stroke:var(--steel)" stroke-width="1.5"/>
-        <g style="stroke:var(--steel)" stroke-width="1"><path d="M80 120h16M80 170h24M80 220h16M80 270h24M80 320h16"/></g>
-        <g style="fill:var(--steel)" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing=".08em"><text x="244" y="54">MF · GS</text></g>
-        <path d="M104 80v230" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".35"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 05.3 CO-PRODUCTS — full use of the kernel ====== -->
-<section class="section co" id="coproducts" data-stage="3" aria-labelledby="co-t">
-  <div class="wrap">
-    <div class="rv">
-      <span class="stage"><b>05.3</b><span class="ar">منتجات أخرى من حبة الذرة</span><span class="en">More from the kernel</span></span>
-      <h2 class="h2" id="co-t"><span class="ar">الاستفادة المتكاملة من حبة الذرة.</span><span class="en">Making full use of the corn kernel.</span></h2>
-      <p class="lead"><span class="ar">إلى جانب النشاء والجلوكوز، ينتج المصنع ثلاثة منتجات أخرى من الذرة.</span><span class="en">Alongside starch and glucose, the factory produces three more products from corn.</span></p>
-    </div>
-    <div class="co__grid">
-      <div class="co__diagram" id="coDiagram" aria-hidden="true">
-        <svg viewBox="0 0 200 262">
-          <path data-part="gluten-feed" d="M100 6c56 0 90 38 90 90 0 64-40 126-78 156-6 5-18 5-24 0C50 222 10 160 10 96 10 44 44 6 100 6Z" fill="url(#g-hull)"/>
-          <path data-part="gluten-meal" d="M100 22c44 0 72 32 72 76 0 44-24 80-48 100H76C52 178 28 142 28 98c0-44 28-76 72-76Z" fill="#f4d98a" stroke="#e1b64a"/>
-          <path d="M100 40c34 0 56 26 56 60 0 20-6 36-14 48H58c-8-12-14-28-14-48 0-34 22-60 56-60Z" fill="url(#g-endo)" opacity=".9"/>
-          <path data-part="corn-germ" d="M100 146c22 0 32 26 28 54-4 24-16 38-28 40-12-2-24-16-28-40-4-28 6-54 28-54Z" fill="url(#g-germ)" stroke="#b98a24"/>
-        </svg>
-      </div>
+    <div class="head rv">
       <div>
-        <div class="corow" data-co="corn-germ" tabindex="0">
-          <span class="corow__n">01</span>
-          <div><h3><span class="ar">جنين الذرة</span><span class="en">Corn Germ</span></h3><p><span class="ar">يُفصل من حبة الذرة كمنتج مستقل.</span><span class="en">Separated from the corn kernel as a product of its own.</span></p></div>
-          <button class="btn btn--sm btn--ghost" type="button" data-product="corn-germ"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-        <div class="corow" data-co="gluten-feed" tabindex="0">
-          <span class="corow__n">02</span>
-          <div><h3><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></h3><p><span class="ar">منتج طبيعي يُحصل عليه أثناء إنتاج النشاء من الذرة، ويُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.</span><span class="en">A natural product obtained during starch production from corn, used in livestock feed as a source of energy and protein.</span></p></div>
-          <button class="btn btn--sm btn--ghost" type="button" data-product="gluten-feed"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-        <div class="corow" data-co="gluten-meal" tabindex="0">
-          <span class="corow__n">03</span>
-          <div><h3><span class="ar">جلوتين ميل 60%</span><span class="en">Gluten Meal 60%</span></h3><p><span class="ar">أحد منتجات الذرة في مصنع ماستر فود.</span><span class="en">One of Master Food's corn products.</span></p></div>
-          <button class="btn btn--sm btn--ghost" type="button" data-product="gluten-meal"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
+        <span class="eyebrow"><span class="ar">منتجاتنا</span><span class="en">Our products</span></span>
+        <h2 class="title"><span class="ar">منتجات مستخلصة من الذرة الصفراء</span><span class="en">Products extracted from yellow corn</span></h2>
+        <p class="lead"><span class="ar">خمسة منتجات من مصنع ماستر فود. اضغط على أي منتج لعرض تفاصيله.</span><span class="en">Five products from the Master Food factory. Open any product for details.</span></p>
       </div>
+      <a class="btn btn--line btn--sm" href="#contact"><span class="ar">اطلب عرض سعر</span><span class="en">Request a quote</span></a>
+    </div>
+    <div class="products">
+      <article class="card rv">
+        <div class="card__img"><img src="https://images.pexels.com/photos/8477743/pexels-photo-8477743.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/8477743/pexels-photo-8477743.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/8477743/pexels-photo-8477743.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8477743/pexels-photo-8477743.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 33vw, 240px" alt="مسحوق أبيض ناعم" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="card__en">Corn Starch</span>
+          <h3><span class="ar">نشاء الذرة</span><span class="en">Corn Starch</span></h3>
+          <p><span class="ar">مسحوق أبيض طبيعي، عديم الرائحة، ذو طعم متعادل.</span><span class="en">A natural white powder, odorless, with a neutral taste.</span></p>
+          <button class="btn btn--line btn--sm" type="button" data-product="corn-starch"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="card__img"><img src="https://images.pexels.com/photos/5634210/pexels-photo-5634210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/5634210/pexels-photo-5634210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/5634210/pexels-photo-5634210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5634210/pexels-photo-5634210.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 33vw, 240px" alt="شراب ذهبي في وعاء زجاجي" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="card__en">Glucose Syrup</span>
+          <h3><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></h3>
+          <p><span class="ar">شراب مركّز ومنقّى من السكر الطبيعي، يُحصل عليه من نشاء الذرة.</span><span class="en">A concentrated, purified syrup of natural sugar obtained from corn starch.</span></p>
+          <button class="btn btn--line btn--sm" type="button" data-product="glucose-syrup"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="card__img"><img src="https://images.pexels.com/photos/8467428/pexels-photo-8467428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/8467428/pexels-photo-8467428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/8467428/pexels-photo-8467428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/8467428/pexels-photo-8467428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 33vw, 240px" alt="حبوب ذرة صفراء عن قرب" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="card__en">Corn Germ</span>
+          <h3><span class="ar">جنين الذرة</span><span class="en">Corn Germ</span></h3>
+          <p><span class="ar">يُفصل من حبة الذرة كمنتج مستقل.</span><span class="en">Separated from the corn kernel as a product of its own.</span></p>
+          <button class="btn btn--line btn--sm" type="button" data-product="corn-germ"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="card__img"><img src="https://images.pexels.com/photos/10759382/pexels-photo-10759382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/10759382/pexels-photo-10759382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/10759382/pexels-photo-10759382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/10759382/pexels-photo-10759382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 33vw, 240px" alt="ماشية تتغذى على العلف" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="card__en">Glutofed 16%</span>
+          <h3><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></h3>
+          <p><span class="ar">يُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.</span><span class="en">Used in livestock feed as a source of energy and protein.</span></p>
+          <button class="btn btn--line btn--sm" type="button" data-product="gluten-feed"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="card__img"><img src="https://images.pexels.com/photos/5463228/pexels-photo-5463228.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/5463228/pexels-photo-5463228.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/5463228/pexels-photo-5463228.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5463228/pexels-photo-5463228.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 33vw, 240px" alt="كيزان الذرة الصفراء" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <span class="card__en">Gluten Meal 60%</span>
+          <h3><span class="ar">جلوتين ميل 60%</span><span class="en">Gluten Meal 60%</span></h3>
+          <p><span class="ar">أحد منتجات الذرة في مصنع ماستر فود.</span><span class="en">One of Master Food's corn products.</span></p>
+          <button class="btn btn--line btn--sm" type="button" data-product="gluten-meal"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ====== APPLICATIONS — glucose syrup at the center ====== -->
-<section class="section apps" id="applications" data-stage="4" aria-labelledby="apps-t">
+<!-- ============ 4. Why Master Food ============ -->
+<section class="section section--white" id="why">
   <div class="wrap">
-    <div class="rv" style="text-align:center;display:grid;justify-items:center">
-      <span class="stage"><b>05.4</b><span class="ar">تطبيقات منتجاتنا</span><span class="en">Applications</span></span>
-      <h2 class="h2" id="apps-t" style="margin-inline:auto"><span class="ar">تطبيقات منتجاتنا</span><span class="en">Where our ingredients go</span></h2>
-      <p class="lead"><span class="ar">بحلاوته المتوسطة التي تُبرز النكهات الفاكهية ولزوجته المتوسطة، يناسب شراب الجلوكوز هذه الصناعات:</span><span class="en">With medium sweetness that enhances fruity flavors and medium viscosity, glucose syrup suits these applications:</span></p>
+    <div class="head rv">
+      <div>
+        <span class="eyebrow"><span class="ar">لماذا Master Food</span><span class="en">Why Master Food</span></span>
+        <h2 class="title"><span class="ar">ما يمكن للعميل أن يعتمد عليه</span><span class="en">What clients can rely on</span></h2>
+      </div>
     </div>
-    <div class="apps__ring" id="appsRing">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <circle class="orbit" cx="50" cy="50" r="40" vector-effect="non-scaling-stroke"/>
-        <circle class="orbit2" cx="50" cy="50" r="30"/>
-      </svg>
-      <div class="apps__core"><div><b><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></b><small>GLUCOSE SYRUP</small></div></div>
-      <div class="app" style="left:50%;top:10%"><span class="app__ic"><svg viewBox="0 0 24 24"><path d="M7 12a5 5 0 0 0 10 0 5 5 0 0 0-10 0Z"/><path d="M7 12 3 9v6l4-3m10 0 4-3v6l-4-3"/></svg></span><b><span class="ar">الحلوى</span><span class="en">Candy</span></b></div>
-      <div class="app" style="left:84.64%;top:30%"><span class="app__ic"><svg viewBox="0 0 24 24"><path d="M4 16c0-5 3.6-9 8-9s8 4 8 9Z"/><path d="M4 16h16v2H4zM9 10l1 4m4-4-1 4"/></svg></span><b><span class="ar">المخبوزات</span><span class="en">Bakery</span></b></div>
-      <div class="app" style="left:84.64%;top:70%"><span class="app__ic"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="8" height="8" rx="3"/><rect x="11" y="10" width="8" height="8" rx="3"/></svg></span><b><span class="ar">المارشميلو</span><span class="en">Marshmallows</span></b></div>
-      <div class="app" style="left:50%;top:90%"><span class="app__ic"><svg viewBox="0 0 24 24"><path d="M7 8h10l-1.4 12H8.4Z"/><path d="M12 8 15 3M6 8h12"/></svg></span><b><span class="ar">السموذي</span><span class="en">Smoothies</span></b></div>
-      <div class="app" style="left:15.36%;top:70%"><span class="app__ic"><svg viewBox="0 0 24 24"><path d="M7 9h10v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2Z"/><path d="M6 6h12v3H6zM7 13h10"/></svg></span><b><span class="ar">المربى</span><span class="en">Jams</span></b></div>
-      <div class="app" style="left:15.36%;top:30%"><span class="app__ic"><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8Z"/><path d="m4 8 8 5 8-5M12 13v8"/></svg></span><b><span class="ar">الحلويات الصلبة</span><span class="en">Hard desserts</span></b></div>
+    <div class="why">
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3><span class="ar">الجودة</span><span class="en">Quality</span></h3><p><span class="ar">منتجات عالية الجودة تلبي توقعات العملاء وتتجاوزها.</span><span class="en">High-quality products that meet and exceed customer expectations.</span></p></div></div>
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></span><div><h3><span class="ar">فحص المواد الخام</span><span class="en">Raw material inspection</span></h3><p><span class="ar">التحقق من مطابقة المواد الخام لمواصفات الشركة عند الاستلام.</span><span class="en">Raw materials are checked against company specifications on receipt.</span></p></div></div>
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span><div><h3><span class="ar">خبرة الشركة الأم</span><span class="en">Parent company experience</span></h3><p><span class="ar">شركة الفوزان للصناعات الغذائية المساهمة، تأسست منذ أكثر من 40 عامًا.</span><span class="en">Al-Fawzan Food Industries Shareholding Company, established over 40 years ago.</span></p></div></div>
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><div><h3><span class="ar">متابعة مستمرة</span><span class="en">Continuous monitoring</span></h3><p><span class="ar">رقابة دورية في جميع مراحل التشغيل لاكتشاف أي انحراف مبكرًا.</span><span class="en">Periodic monitoring at every stage to catch deviations early.</span></p></div></div>
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M3 9 12 4l9 5v11H3Z"/><path d="M7 20v-7h10v7M7 16h10"/></svg></span><div><h3><span class="ar">تخزين مراقَب</span><span class="en">Monitored storage</span></h3><p><span class="ar">مراقبة درجات الحرارة والرطوبة في المخازن.</span><span class="en">Temperature and humidity monitored in the warehouses.</span></p></div></div>
+      <div class="why__item rv"><span class="why__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg></span><div><h3><span class="ar">رضا العملاء</span><span class="en">Customer satisfaction</span></h3><p><span class="ar">من القيم الأساسية التي تعمل بها الشركة.</span><span class="en">One of the company's core values.</span></p></div></div>
     </div>
-    <div class="feedline rv">
-      <svg width="48" height="48" aria-hidden="true"><use href="#p-feed"/></svg>
-      <div><b><span class="ar">أعلاف الماشية</span><span class="en">Livestock feed</span></b><p style="color:var(--ink-2);font-size:var(--t-sm)"><span class="ar">يُستخدم جلوتوفيد 16% في أعلاف الماشية كمصدر للطاقة والبروتين.</span><span class="en">Glutofed 16% is used in livestock feed as a source of energy and protein.</span></p></div>
-      <button class="btn btn--sm btn--ghost" type="button" data-product="gluten-feed"><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></button>
-    </div>
-    <p class="note" style="text-align:center"><span class="ar">نشاء الذرة والجلوكوز يدخلان في العديد من الصناعات الغذائية. تواصل مع فريقنا لمعرفة ملاءمة المنتج لتطبيقك.</span><span class="en">Corn starch and glucose are used across many food industries. Contact our team to check the fit for your application.</span></p>
   </div>
 </section>
 
-<!-- ====== 06 QUALITY — the link between factory and product ====== -->
-<section class="section quality" id="quality" data-stage="5" aria-labelledby="q-t">
+<!-- ============ 5. Quality ============ -->
+<section class="section" id="quality">
+  <div class="wrap split split--flip">
+    <figure class="photo rv" style="margin:0;aspect-ratio:4/4.4"><img src="https://images.pexels.com/photos/3735781/pexels-photo-3735781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/3735781/pexels-photo-3735781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/3735781/pexels-photo-3735781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/3735781/pexels-photo-3735781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(max-width: 860px) 100vw, 50vw" alt="مختصة في مختبر" loading="lazy" decoding="async"></figure>
+    <div class="rv">
+      <span class="eyebrow"><span class="ar">إدارة الجودة</span><span class="en">Quality management</span></span>
+      <h2 class="title"><span class="ar">جودة تُتابَع من المادة الخام حتى التسليم</span><span class="en">Quality followed from raw material to delivery</span></h2>
+      <ol class="steps">
+        <li><div><b><span class="ar">فحص المواد الخام</span><span class="en">Raw material inspection</span></b><span><span class="ar">والتحقق من مطابقتها لمواصفات الشركة.</span><span class="en">Verified against company specifications.</span></span></div></li>
+        <li><div><b><span class="ar">متابعة مراحل التصنيع</span><span class="en">In-process follow-up</span></b><span><span class="ar">للتأكد من سلامة ودقة خطوات التصنيع.</span><span class="en">To make sure each manufacturing step is safe and accurate.</span></span></div></li>
+        <li><div><b><span class="ar">فحص المنتج النهائي</span><span class="en">Final product inspection</span></b><span><span class="ar">قبل تخزينه وتوزيعه.</span><span class="en">Before storage and distribution.</span></span></div></li>
+        <li><div><b><span class="ar">التحاليل المخبرية</span><span class="en">Laboratory analyses</span></b><span class="pill-row"><span class="pill"><span class="ar">فيزيائية</span><span class="en">Physical</span></span><span class="pill"><span class="ar">كيميائية</span><span class="en">Chemical</span></span><span class="pill"><span class="ar">ميكروبيولوجية</span><span class="en">Microbiological</span></span></span></div></li>
+        <li><div><b><span class="ar">متابعة التخزين</span><span class="en">Storage monitoring</span></b><span><span class="ar">مراقبة درجات الحرارة والرطوبة في المخازن.</span><span class="en">Temperature and humidity in the warehouses.</span></span></div></li>
+        <li><div><b><span class="ar">مراقبة النقل</span><span class="en">Transport check</span></b><span><span class="ar">متابعة ملاءمة وسائل النقل.</span><span class="en">Suitability of transport vehicles.</span></span></div></li>
+      </ol>
+      <p class="quote"><span class="ar">نعتمد نظام رقابة دورية في جميع مراحل التشغيل لحماية صحة المستهلك وجودة المنتج وفق المعايير الدولية.</span><span class="en">Periodic monitoring runs through every stage of operation to protect consumer health and product quality in line with international standards.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. Applications ============ -->
+<section class="section section--white" id="applications">
   <div class="wrap">
-    <div class="rv">
-      <span class="stage"><b>06</b><span class="ar">إدارة الجودة</span><span class="en">Quality management</span></span>
-      <h2 class="h2" id="q-t"><span class="ar">الجودة هي الرابط بين المصنع والمنتج.</span><span class="en">Quality links the factory to the product.</span></h2>
-      <p class="qquote"><span class="ar">نجاحنا يعتمد على تقديم منتجات عالية الجودة تلبي توقعات العملاء وتتجاوزها، وضمان جودة وسلامة جميع المنتجات المصنّعة. نعتمد نظام رقابة دورية في جميع مراحل التشغيل لاكتشاف أي انحرافات مبكرًا واتخاذ الإجراءات اللازمة لحماية صحة المستهلك وجودة المنتج وفق المعايير الدولية.</span><span class="en">Our success depends on providing high-quality products that meet and exceed customer expectations, and on ensuring the quality and food safety of every product we manufacture. A system of periodic monitoring runs through all stages of operation to detect any early deviations and take the necessary measures to protect consumer health and product quality in line with international standards.</span></p>
-    </div>
-    <div class="qtl" id="qtl">
-      <div class="qtl__steps" role="tablist" aria-label="Quality stages">
-        <span class="qtl__ind" aria-hidden="true"></span>
+    <div class="head rv">
+      <div>
+        <span class="eyebrow"><span class="ar">التطبيقات</span><span class="en">Applications</span></span>
+        <h2 class="title"><span class="ar">أين تُستخدم منتجاتنا</span><span class="en">Where our products are used</span></h2>
+        <p class="lead"><span class="ar">بحلاوته المتوسطة التي تُبرز النكهات الفاكهية ولزوجته المتوسطة، يناسب شراب الجلوكوز صناعات غذائية متعددة.</span><span class="en">With medium sweetness that enhances fruity flavors and medium viscosity, glucose syrup suits many food applications.</span></p>
       </div>
     </div>
-    <div class="lab" id="lab" role="tabpanel" aria-live="polite">
-      <div class="lab__view"><span class="lab__corner lab__corner--tl">MASTER FOOD · QC</span><span class="lab__corner lab__corner--br" id="labCode">QC-01</span><svg id="labSvg" viewBox="-120 -120 240 240" aria-hidden="true"></svg></div>
-      <div class="lab__body" id="labBody"></div>
+    <div class="apps">
+      <figure class="app rv" style="margin:0"><img src="https://images.pexels.com/photos/5469042/pexels-photo-5469042.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/5469042/pexels-photo-5469042.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/5469042/pexels-photo-5469042.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/5469042/pexels-photo-5469042.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 900px) 50vw, 25vw" alt="حلوى ملوّنة" loading="lazy" decoding="async"><figcaption><b><span class="ar">الحلوى</span><span class="en">Candy</span></b><small><span class="ar">شراب الجلوكوز</span><span class="en">Glucose syrup</span></small></figcaption></figure>
+      <figure class="app rv" style="margin:0"><img src="https://images.pexels.com/photos/1287278/pexels-photo-1287278.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/1287278/pexels-photo-1287278.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/1287278/pexels-photo-1287278.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/1287278/pexels-photo-1287278.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 900px) 50vw, 25vw" alt="مخبوزات طازجة" loading="lazy" decoding="async"><figcaption><b><span class="ar">المخبوزات</span><span class="en">Bakery</span></b><small><span class="ar">شراب الجلوكوز</span><span class="en">Glucose syrup</span></small></figcaption></figure>
+      <figure class="app rv" style="margin:0"><img src="https://images.pexels.com/photos/10165683/pexels-photo-10165683.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/10165683/pexels-photo-10165683.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/10165683/pexels-photo-10165683.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/10165683/pexels-photo-10165683.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 900px) 50vw, 25vw" alt="مربى" loading="lazy" decoding="async"><figcaption><b><span class="ar">المربى</span><span class="en">Jams</span></b><small><span class="ar">شراب الجلوكوز</span><span class="en">Glucose syrup</span></small></figcaption></figure>
+      <figure class="app rv" style="margin:0"><img src="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w" sizes="(max-width: 900px) 50vw, 25vw" alt="مشروب سموذي" loading="lazy" decoding="async"><figcaption><b><span class="ar">السموذي</span><span class="en">Smoothies</span></b><small><span class="ar">شراب الجلوكوز</span><span class="en">Glucose syrup</span></small></figcaption></figure>
+    </div>
+    <p class="apps-note rv">
+      <span class="ar">ويُستخدم شراب الجلوكوز أيضًا في:</span><span class="en">Glucose syrup is also used in:</span>
+      <span class="pill"><span class="ar">المارشميلو</span><span class="en">Marshmallows</span></span>
+      <span class="pill"><span class="ar">الحلويات الصلبة</span><span class="en">Hard desserts</span></span>
+      <span style="margin-inline-start:8px"><span class="ar">وجلوتوفيد 16% في:</span><span class="en">and Glutofed 16% in:</span></span>
+      <span class="pill"><span class="ar">أعلاف الماشية</span><span class="en">Livestock feed</span></span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 7. Factory banner ============ -->
+<section class="banner" aria-label="Factory">
+  <img src="https://images.pexels.com/photos/5213973/pexels-photo-5213973.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/5213973/pexels-photo-5213973.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5213973/pexels-photo-5213973.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/5213973/pexels-photo-5213973.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" alt="صوامع حبوب صناعية" loading="lazy" decoding="async">
+  <div class="wrap banner__in">
+    <div class="rv">
+      <h2><span class="ar">من الذرة الصفراء إلى مكونات تدخل في العديد من الصناعات الغذائية.</span><span class="en">From yellow corn to ingredients used across many food industries.</span></h2>
+      <p><span class="ar">المملكة العربية السعودية – القصيم – بريدة</span><span class="en">Saudi Arabia – Qassim – Buraydah</span></p>
+    </div>
+    <div class="stat rv"><b><span class="ltr">+<span data-count="40">40</span></span></b><small><span class="ar">عامًا منذ تأسيس الشركة الأم</span><span class="en">years since the parent company was founded</span></small></div>
+  </div>
+</section>
+
+<!-- ============ 8. Vision & values ============ -->
+<section class="section section--cream" id="vision">
+  <div class="wrap vv">
+    <div class="rv">
+      <span class="eyebrow"><span class="ar">رؤيتنا</span><span class="en">Our vision</span></span>
+      <p class="vision"><span class="ar">دعم <em>الأمن الغذائي</em> للمملكة والمنطقة بطريقة مستدامة، وتوفير حلول مكونات غذائية مستخلصة من الذرة.</span><span class="en">Supporting <em>food security</em> for the Kingdom and the region sustainably, and providing food ingredient solutions extracted from corn.</span></p>
+    </div>
+    <div class="rv">
+      <span class="eyebrow"><span class="ar">قيمنا</span><span class="en">Our values</span></span>
+      <ul class="values">
+        <li><span class="ar">المصداقية</span><span class="en">Credibility</span></li>
+        <li><span class="ar">الاحترام</span><span class="en">Respect</span></li>
+        <li><span class="ar">العمل الجماعي</span><span class="en">Teamwork</span></li>
+        <li><span class="ar">النزاهة</span><span class="en">Integrity</span></li>
+        <li><span class="ar">الابتكار</span><span class="en">Innovation</span></li>
+        <li><span class="ar">رضا العملاء</span><span class="en">Customer satisfaction</span></li>
+        <li><span class="ar">الجودة</span><span class="en">Quality</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ====== 07 STORAGE & HANDLING ====== -->
-<section class="section storage" id="storage" data-stage="6" aria-labelledby="st-t">
-  <div class="wrap storage__grid">
-    <div class="silos rv" id="silos" aria-hidden="true">
-      <svg viewBox="0 0 400 300">
-        <g style="stroke:var(--steel)" stroke-width="1.2">
-          <g>
-            <clipPath id="s1"><path d="M40 70a40 30 0 0 1 80 0v170H40Z"/></clipPath>
-            <rect class="silo-fill" x="40" y="40" width="80" height="200" clip-path="url(#s1)" fill="url(#g-hull)" opacity=".85"/>
-            <path d="M40 70a40 30 0 0 1 80 0v170H40Z" style="fill:none"/>
-          </g>
-          <g>
-            <clipPath id="s2"><path d="M140 70a40 30 0 0 1 80 0v170h-80Z"/></clipPath>
-            <rect class="silo-fill" x="140" y="40" width="80" height="200" clip-path="url(#s2)" style="fill:var(--white);--sf:.3" opacity=".95"/>
-            <path d="M140 70a40 30 0 0 1 80 0v170h-80Z" style="fill:none"/>
-          </g>
-          <rect x="240" y="130" width="140" height="110" rx="4" style="fill:var(--white)"/>
-          <path d="M240 130l70-36 70 36" style="fill:none"/>
-          <g style="fill:var(--cream)"><rect x="256" y="180" width="30" height="24" rx="2"/><rect x="290" y="180" width="30" height="24" rx="2"/><rect x="273" y="154" width="30" height="24" rx="2"/><rect x="324" y="206" width="40" height="34" rx="2" fill="url(#g-syrup)"/></g>
-          <path d="M80 30v-6h120v6M200 24h40v106" style="fill:none" stroke-dasharray="3 3"/>
-        </g>
-        <path d="M10 240h380" style="stroke:var(--steel)"/>
-        <g style="fill:var(--steel)" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing=".08em">
-          <text x="46" y="258">RAW · CORN</text><text x="146" y="258">STARCH</text><text x="266" y="258">FINISHED GOODS</text>
-        </g>
-      </svg>
-    </div>
-    <div class="rv">
-      <span class="stage"><b>07</b><span class="ar">التخزين والمناولة</span><span class="en">Storage &amp; Handling</span></span>
-      <h2 class="h2" id="st-t"><span class="ar">تخزين يحافظ على ما صنعته الجودة.</span><span class="en">Storage that protects what quality built.</span></h2>
-      <p class="lead"><span class="ar">إدارة المخازن والمستودعات جزء أساسي من سلسلة المصنع، من استلام المادة الخام حتى جاهزية المنتج للتوزيع.</span><span class="en">Warehouse management is a core part of the factory's chain, from receiving raw material to getting product ready for distribution.</span></p>
-      <div class="handling">
-        <div class="hitem"><small>RAW MATERIALS</small><h3><span class="ar">المواد الخام</span><span class="en">Raw materials</span></h3><p><span class="ar">تُستلم ويُتحقق من مطابقتها لمواصفات الشركة.</span><span class="en">Received and checked against company specifications.</span></p></div>
-        <div class="hitem"><small>FINISHED GOODS</small><h3><span class="ar">المنتجات النهائية</span><span class="en">Finished products</span></h3><p><span class="ar">تُفحص قبل تخزينها وتوزيعها.</span><span class="en">Inspected before storage and distribution.</span></p></div>
-        <div class="hitem"><small>CONDITIONS</small><h3><span class="ar">الظروف التخزينية</span><span class="en">Storage conditions</span></h3><p><span class="ar">مراقبة درجات الحرارة والرطوبة في المخازن.</span><span class="en">Temperature and humidity monitored in the warehouses.</span></p></div>
-        <div class="hitem"><small>DISTRIBUTION</small><h3><span class="ar">جاهزية التوزيع</span><span class="en">Distribution readiness</span></h3><p><span class="ar">متابعة ملاءمة وسائل النقل.</span><span class="en">Suitability of transport vehicles is checked.</span></p></div>
+<!-- ============ 9. Contact ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></span>
+        <h2 class="title"><span class="ar">نسعد باستفساراتكم</span><span class="en">We'd be glad to hear from you</span></h2>
+        <p class="lead"><span class="ar">تواصل مع فريقنا بخصوص المنتجات أو الكميات أو أي استفسار.</span><span class="en">Contact our team about products, quantities or any question.</span></p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ====== VISION ====== -->
-<section class="section vision" id="vision" data-stage="7" aria-labelledby="v-t">
-  <div class="wrap vision__grid">
-    <div class="rv">
-      <span class="stage"><span class="ar">رؤيتنا</span><span class="en">Our vision</span></span>
-      <h2 class="vision__title" id="v-t"><span class="ar">دعم <em>الأمن الغذائي</em> للمملكة والمنطقة بطريقة مستدامة.</span><span class="en">Supporting <em>food security</em> for the Kingdom and the region, sustainably.</span></h2>
-      <p class="lead"><span class="ar">وتوفير حلول مكونات غذائية مستخلصة من الذرة.</span><span class="en">And providing food ingredient solutions extracted from corn.</span></p>
-    </div>
-    <div class="coord rv" aria-label="Qassim – Buraydah" role="img">
-      <svg viewBox="0 0 300 300">
-        <circle class="ring" cx="150" cy="150" r="140"/>
-        <circle class="ring" cx="150" cy="150" r="96" stroke-dasharray="2 5"/>
-        <circle class="ring" cx="150" cy="150" r="52"/>
-        <circle class="ring-anim" cx="150" cy="150" r="140"/>
-        <path d="M150 0v300M0 150h300" style="stroke:var(--line)"/>
-        <circle cx="150" cy="150" r="7" style="fill:var(--corn)"/>
-        <circle cx="150" cy="150" r="14" style="fill:none;stroke:var(--corn)"/>
-        <text x="150" y="126" text-anchor="middle" class="pin-lbl">القصيم · بريدة</text>
-        <text x="150" y="182" text-anchor="middle">26.33°N · 43.97°E</text>
-        <text x="150" y="90" text-anchor="middle">KINGDOM</text>
-        <text x="150" y="20" text-anchor="middle">REGION</text>
-        <text x="150" y="205" text-anchor="middle">BURAYDAH</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ====== VALUES — circular system around the mark ====== -->
-<section class="values" id="values" data-stage="7" aria-labelledby="val-t">
-  <div class="values__scene" id="valuesScene">
-    <div class="values__pin">
-      <div class="wrap values__grid">
-        <div>
-          <span class="stage"><span class="ar">قيمنا</span><span class="en">Our values</span></span>
-          <h2 class="h2" id="val-t"><span class="ar">سبع قيم تدور حول مصنع واحد.</span><span class="en">Seven values around one factory.</span></h2>
-          <p class="lead"><span class="ar">كما تتحول الحبة عبر مراحلها، تكتمل الدائرة بقيمنا.</span><span class="en">As the kernel moves through its stages, our values complete the circle.</span></p>
-          <p class="vcount" aria-hidden="true"><span id="vNum">0</span><small> / 7</small></p>
+    <div class="contact">
+      <div class="rv">
+        <div class="cinfo">
+          <a class="citem" href="tel:+966163811788"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><small><span class="ar">الهاتف</span><span class="en">Phone</span></small><b class="ltr">+966 16 381 1788</b><b class="ltr">+966 16 381 1560</b></div></a>
+          <a class="citem" href="tel:+966559888061"><span class="why__ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><small><span class="ar">الجوال</span><span class="en">Mobile</span></small><b class="ltr">+966 55 988 8061</b></div></a>
+          <a class="citem" href="mailto:masterfood@ftinco.com"><span class="why__ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></small><b class="ltr">masterfood@ftinco.com</b></div></a>
+          <a class="citem" href="https://www.google.com/maps/search/?api=1&amp;query=Buraydah%2C%20Al-Qassim%2C%20Saudi%20Arabia" target="_blank" rel="noopener"><span class="why__ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small><span class="ar">الموقع</span><span class="en">Location</span></small><b><span class="ar">المملكة العربية السعودية – القصيم – بريدة</span><span class="en">Saudi Arabia – Qassim – Buraydah</span></b></div></a>
         </div>
-        <div class="vring" id="vring">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle class="track" cx="50" cy="50" r="42" vector-effect="non-scaling-stroke"/>
-            <circle class="arc" id="vArc" cx="50" cy="50" r="42" transform="rotate(-90 50 50)" stroke-dasharray="263.9" stroke-dashoffset="263.9" style="stroke-width:.8"/>
-          </svg>
-          <div class="vring__core"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg></div>
-          <ul style="list-style:none;margin:0;padding:0">
-            <li class="val" style="left:50%;top:8%"><i></i><b><span class="ar">المصداقية</span><span class="en">Credibility</span></b><small>CREDIBILITY</small></li>
-            <li class="val" style="left:82.84%;top:23.81%"><i></i><b><span class="ar">الاحترام</span><span class="en">Respect</span></b><small>RESPECT</small></li>
-            <li class="val" style="left:90.95%;top:59.35%"><i></i><b><span class="ar">العمل الجماعي</span><span class="en">Teamwork</span></b><small>TEAMWORK</small></li>
-            <li class="val" style="left:68.22%;top:87.84%"><i></i><b><span class="ar">النزاهة</span><span class="en">Integrity</span></b><small>INTEGRITY</small></li>
-            <li class="val" style="left:31.78%;top:87.84%"><i></i><b><span class="ar">الابتكار</span><span class="en">Innovation</span></b><small>INNOVATION</small></li>
-            <li class="val" style="left:9.05%;top:59.35%"><i></i><b><span class="ar">رضا العملاء</span><span class="en">Customer satisfaction</span></b><small>SATISFACTION</small></li>
-            <li class="val" style="left:17.16%;top:23.81%"><i></i><b><span class="ar">الجودة</span><span class="en">Quality</span></b><small>QUALITY</small></li>
-          </ul>
-        </div>
+        <div class="map"><iframe title="Buraydah, Qassim" src="https://www.google.com/maps?q=Buraydah,+Al-Qassim,+Saudi+Arabia&amp;z=11&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== LINEUP + FINAL CTA ====== -->
-<section class="section lineup" id="lineup" data-stage="8" aria-labelledby="cta-t">
-  <div class="wrap">
-    <div class="rv" style="text-align:center;display:grid;justify-items:center">
-      <span class="stage"><span class="ar">مجموعة منتجات ماستر فود</span><span class="en">The Master Food range</span></span>
-    </div>
-    <div class="jars" id="jars"></div>
-    <div class="shelf" aria-hidden="true"></div>
-    <div class="bigcta rv">
-      <h2 id="cta-t"><span class="ar">دعونا نوفّر <em>المكوّن المناسب</em> لمنتجك.</span><span class="en">Let us supply <em>the right ingredient</em> for your product.</span></h2>
-      <p><span class="ar">أخبرنا بما تصنعه، وسيتواصل معك فريقنا بخصوص المنتج المناسب.</span><span class="en">Tell us what you make, and our team will get back to you about the right product.</span></p>
-      <div class="row">
-        <a class="btn btn--lg" href="#contact"><span class="ar">اطلب استفسارًا</span><span class="en">Send an inquiry</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
-        <a class="btn btn--lg btn--ghost" href="#products"><span class="ar">استعرض المنتجات</span><span class="en">Browse products</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 08 CONTACT ====== -->
-<section class="section contact" id="contact" data-stage="8" aria-labelledby="c-t">
-  <div class="wrap">
-    <div class="rv">
-      <span class="stage"><b>08</b><span class="ar">التوصيل للعميل · تواصل معنا</span><span class="en">To the client · Contact</span></span>
-      <h2 class="h2" id="c-t"><span class="ar">آخر محطة في رحلة الذرة: أنت.</span><span class="en">The last stage of the corn's journey: you.</span></h2>
-    </div>
-    <div class="contact__grid">
-      <div class="cinfo rv">
-        <div class="cline"><div><small><span class="ar">العنوان</span><span class="en">Address</span></small><span class="v"><span class="ar">المملكة العربية السعودية – القصيم – بريدة</span><span class="en">Saudi Arabia – Qassim – Buraydah</span></span></div></div>
-        <div class="cline"><div><small><span class="ar">هاتف</span><span class="en">Phone</span></small><a href="tel:+966163811788" dir="ltr">+966 16 381 1788</a></div><button class="copy" type="button" data-copy="+966163811788">COPY</button></div>
-        <div class="cline"><div><small><span class="ar">هاتف</span><span class="en">Phone</span></small><a href="tel:+966163811560" dir="ltr">+966 16 381 1560</a></div><button class="copy" type="button" data-copy="+966163811560">COPY</button></div>
-        <div class="cline"><div><small><span class="ar">جوال</span><span class="en">Mobile</span></small><a href="tel:+966559888061" dir="ltr">+966 55 988 8061</a></div><button class="copy" type="button" data-copy="+966559888061">COPY</button></div>
-        <div class="cline"><div><small><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></small><a href="mailto:masterfood@ftinco.com" dir="ltr">masterfood@ftinco.com</a></div><button class="copy" type="button" data-copy="masterfood@ftinco.com">COPY</button></div>
-      </div>
-      <form class="form rv" id="contactForm" novalidate>
-        <div class="field"><label for="c-name"><span class="ar">الاسم</span><span class="en">Name</span></label><input class="input" id="c-name" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="c-company"><span class="ar">الشركة / المصنع</span><span class="en">Company / factory</span></label><input class="input" id="c-company" name="company" autocomplete="organization"></div>
-        <div class="field"><label for="c-email"><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></label><input class="input" id="c-email" name="email" type="email" required autocomplete="email" dir="ltr"></div>
-        <div class="field"><label for="c-phone"><span class="ar">الجوال</span><span class="en">Phone</span></label><input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></div>
-        <fieldset class="field full" style="border:0;padding:0;margin:0"><legend style="font:500 var(--t-xs)/1.2 var(--f-display);color:var(--ink-2);margin-bottom:8px"><span class="ar">المنتج المطلوب</span><span class="en">Product of interest</span></legend>
-          <div class="checkrow" id="c-products"></div>
-        </fieldset>
-        <div class="field full"><label for="c-msg"><span class="ar">تفاصيل الطلب</span><span class="en">Request details</span></label><textarea class="textarea" id="c-msg" name="message" required></textarea></div>
-        <div class="form__foot full">
-          <p class="form__msg" id="c-status" aria-live="polite"></p>
-          <button class="btn" type="submit"><span class="ar">إرسال الاستفسار</span><span class="en">Send inquiry</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <form class="form rv" id="form" novalidate>
+        <h3 class="full"><span class="ar">أرسل استفسارك</span><span class="en">Send your inquiry</span></h3>
+        <div class="field"><label for="f-name"><span class="ar">الاسم</span><span class="en">Name</span></label><input class="input" id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-company"><span class="ar">الشركة</span><span class="en">Company</span></label><input class="input" id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="f-phone"><span class="ar">الجوال</span><span class="en">Mobile</span></label><input class="input" id="f-phone" name="phone" type="tel" required autocomplete="tel" dir="ltr"></div>
+        <div class="field"><label for="f-email"><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></label><input class="input" id="f-email" name="email" type="email" autocomplete="email" dir="ltr"></div>
+        <div class="field full"><label for="f-msg"><span class="ar">الرسالة</span><span class="en">Message</span></label><textarea class="input" id="f-msg" name="message" required></textarea></div>
+        <div class="full" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+          <p class="form__msg" id="f-status" aria-live="polite"></p>
+          <button class="btn" type="submit"><span class="ar">إرسال</span><span class="en">Send</span></button>
         </div>
       </form>
     </div>
@@ -533,22 +298,22 @@
 </section>
 </main>
 
-<!-- ====== Footer ====== -->
+<!-- ============ 10. Footer ============ -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <a class="logo" href="#home"><svg aria-hidden="true"><use href="#mark"/></svg><span class="logo__txt"><b>MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan For Food Industries Factory</span></small></span></a>
-        <p><span class="ar">إنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء. القصيم – بريدة.</span><span class="en">Producing starch and glucose extracted from yellow corn. Qassim – Buraydah.</span></p>
+        <a class="logo" href="#home"><svg aria-hidden="true"><use href="#mark"/></svg><span><b>MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan Food Industries Factory</span></small></span></a>
+        <p class="ftr__about"><span class="ar">إنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء للصناعات الغذائية.</span><span class="en">Producing starch and glucose extracted from yellow corn for the food industry.</span></p>
       </div>
       <div>
-        <h4><span class="ar">الموقع</span><span class="en">Site</span></h4>
+        <h4><span class="ar">روابط سريعة</span><span class="en">Quick links</span></h4>
         <ul>
           <li><a href="#about"><span class="ar">من نحن</span><span class="en">About</span></a></li>
+          <li><a href="#products"><span class="ar">المنتجات</span><span class="en">Products</span></a></li>
           <li><a href="#quality"><span class="ar">الجودة</span><span class="en">Quality</span></a></li>
-          <li><a href="#applications"><span class="ar">التطبيقات</span><span class="en">Applications</span></a></li>
-          <li><a href="#vision"><span class="ar">رؤيتنا</span><span class="en">Vision</span></a></li>
-          <li><a href="design-system.html"><span class="ar">نظام التصميم</span><span class="en">Design system</span></a></li>
+          <li><a href="#vision"><span class="ar">رؤيتنا وقيمنا</span><span class="en">Vision &amp; values</span></a></li>
+          <li><a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact</span></a></li>
         </ul>
       </div>
       <div>
@@ -564,40 +329,29 @@
       <div>
         <h4><span class="ar">التواصل</span><span class="en">Contact</span></h4>
         <ul>
-          <li><span class="ar">المملكة العربية السعودية – القصيم – بريدة</span><span class="en">Saudi Arabia – Qassim – Buraydah</span></li>
-          <li dir="ltr" style="text-align:start"><a href="tel:+966163811788">+966 16 381 1788</a></li>
-          <li dir="ltr" style="text-align:start"><a href="tel:+966163811560">+966 16 381 1560</a></li>
-          <li dir="ltr" style="text-align:start"><a href="tel:+966559888061">+966 55 988 8061</a></li>
-          <li><a href="mailto:masterfood@ftinco.com">masterfood@ftinco.com</a></li>
+          <li><span class="ar">القصيم – بريدة، المملكة العربية السعودية</span><span class="en">Buraydah, Qassim, Saudi Arabia</span></li>
+          <li><a class="ltr" href="tel:+966163811788">+966 16 381 1788</a></li>
+          <li><a class="ltr" href="tel:+966163811560">+966 16 381 1560</a></li>
+          <li><a class="ltr" href="tel:+966559888061">+966 55 988 8061</a></li>
+          <li><a class="ltr" href="mailto:masterfood@ftinco.com">masterfood@ftinco.com</a></li>
         </ul>
       </div>
     </div>
     <div class="ftr__bar">
-      <span>© <span id="yr">2026</span> <span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود. جميع الحقوق محفوظة.</span><span class="en">Alfozan For Food Industries Factory – Master Food. All rights reserved.</span></span>
-      <span>FROM CORN TO FOOD INGREDIENTS</span>
+      <span>© <span id="yr">2026</span> <span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود. جميع الحقوق محفوظة.</span><span class="en">Alfozan Food Industries Factory – Master Food. All rights reserved.</span></span>
     </div>
   </div>
 </footer>
 
-<!-- ====== Inquiry modal ====== -->
-<div class="modal" id="inquiry" role="dialog" aria-modal="true" aria-labelledby="inq-t" hidden>
-  <div class="modal__scrim" data-close></div>
-  <div class="modal__box">
-    <button class="icon-btn modal__x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <span class="stage"><span class="ar">طلب استفسار</span><span class="en">Inquiry</span></span>
-    <h2 id="inq-t" style="font-size:var(--t-2xl);margin-block:12px 20px"><span class="ar">ما المكوّن الذي تحتاجه؟</span><span class="en">Which ingredient do you need?</span></h2>
-    <form class="form" id="modalForm" novalidate style="box-shadow:none">
-      <div class="field"><label for="m-name"><span class="ar">الاسم</span><span class="en">Name</span></label><input class="input" id="m-name" name="name" required autocomplete="name"></div>
-      <div class="field"><label for="m-email"><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></label><input class="input" id="m-email" name="email" type="email" required dir="ltr" autocomplete="email"></div>
-      <div class="field full"><label for="m-product"><span class="ar">المنتج</span><span class="en">Product</span></label><select class="select" id="m-product" name="product"></select></div>
-      <div class="field full"><label for="m-msg"><span class="ar">الرسالة</span><span class="en">Message</span></label><textarea class="textarea" id="m-msg" name="message" required></textarea></div>
-      <div class="form__foot full"><p class="form__msg" id="m-status" aria-live="polite"></p><button class="btn" type="submit"><span class="ar">إرسال</span><span class="en">Send</span></button></div>
-    </form>
+<!-- ============ Product dialog (opened by #corn-starch, #glucose-syrup, …) ============ -->
+<div class="pd" id="pd" role="dialog" aria-modal="true" aria-labelledby="pd-title" hidden>
+  <div class="pd__scrim" data-close></div>
+  <div class="pd__box">
+    <button class="pd__x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pd__img"><img id="pd-img" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" decoding="async"></div>
+    <div class="pd__body" id="pd-body"></div>
   </div>
 </div>
-
-<!-- ====== Product experience (opened by #corn-starch, #glucose-syrup, …) ====== -->
-<div class="pdx" id="pdx" role="dialog" aria-modal="true" aria-label="Product" hidden></div>
 
 <script src="assets/js/main.js" defer></script>
 </body>
