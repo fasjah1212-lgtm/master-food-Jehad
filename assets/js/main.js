@@ -35,6 +35,13 @@
       desc: { ar: 'منتج طبيعي يُحصل عليه أثناء إنتاج النشاء من الذرة، ويُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.', en: 'A natural product obtained during starch production from corn, used in livestock feed as a source of energy and protein.' },
       uses: { ar: ['أعلاف الماشية'], en: ['Livestock feed'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'إنتاج النشاء من الذرة', en: 'Starch production from corn' }], [{ ar: 'القيمة', en: 'Value' }, { ar: 'مصدر للطاقة والبروتين', en: 'Energy and protein' }]]
+    },
+    'gluten-meal': {
+      img: 'assets/img/gluten-meal.webp', name: { ar: 'جلوتين ميل 60%', en: 'Gluten Meal 60%' },
+      desc: { ar: 'منتج طبيعي يُحصل عليه خلال مرحلة إنتاج النشا من الذرة. يتميز بنسبة عالية من البروتين لا تقل عن 60%، ويُستخدم كمصدر رئيسي للبروتين في صناعة أعلاف الدواجن والأبقار والإبل.', en: 'A natural product obtained during starch production from corn. Its high protein content of at least 60% makes it a main protein source in poultry, cattle and camel feed.' },
+      uses: { ar: ['أعلاف الدواجن', 'أعلاف الأبقار', 'أعلاف الإبل'], en: ['Poultry feed', 'Cattle feed', 'Camel feed'] },
+      specTitle: { ar: 'المواصفات', en: 'Specifications' },
+      facts: [[{ ar: 'الرطوبة', en: 'Moisture' }, { ar: '12% كحد أقصى', en: '12% max' }], [{ ar: 'البروتين', en: 'Protein' }, { ar: '60% كحد أدنى', en: '60% min' }], [{ ar: 'الدهون', en: 'Fat' }, { ar: '6% كحد أقصى', en: '6% max' }], [{ ar: 'النشا', en: 'Starch' }, { ar: '20% كحد أقصى', en: '20% max' }], [{ ar: 'الرماد', en: 'Ash' }, { ar: '2% كحد أقصى', en: '2% max' }]]
     }
   };
 
