@@ -135,6 +135,102 @@
     $$('.rv').forEach((el) => el.classList.add('in'));
   }
 
+  /* ---------- Hero: product cards orbiting the corn (drag / swipe / arrows / keys) ---------- */
+  (function orbitShowcase() {
+    const box = $('#orbit'); if (!box) return;
+    const cards = $$('.ocard', box), N = cards.length, TAU = Math.PI * 2;
+    const dotsBox = $('.orbit__dots'), live = $('#orbit-live');
+    let rot = 0, target = 0, raf = 0, Rx = 380, Ry = 150, cy = 0;
+
+    cards.forEach((c, i) => {
+      const d = document.createElement('button');
+      d.type = 'button'; d.setAttribute('role', 'tab'); d.setAttribute('aria-label', c.querySelector('.ocard__en').textContent);
+      d.addEventListener('click', () => goTo(i));
+      dotsBox.appendChild(d);
+    });
+    const dots = $$('button', dotsBox);
+
+    function measure() {
+      const w = box.clientWidth, h = box.clientHeight, mobile = w < 700;
+      Rx = mobile ? Math.min(w * 0.42, 170) : Math.min(w * 0.38, 400);
+      Ry = mobile ? h * 0.28 : h * 0.26;
+      cy = mobile ? h * 0.08 : h * 0.03;
+    }
+    const mod = (n) => ((n % N) + N) % N;
+    function render() {
+      const active = mod(Math.round(rot));
+      cards.forEach((c, i) => {
+        const a = ((i - rot) / N) * TAU;
+        const s = Math.sin(a), co = Math.cos(a), depth = (co + 1) / 2;
+        const x = s * Rx, y = cy + co * Ry;
+        const scale = 0.7 + 0.3 * depth;
+        c.style.transform = `translate(-50%, -50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+        c.style.opacity = (0.35 + 0.65 * depth).toFixed(3);
+        c.style.zIndex = co > -0.25 ? 30 + Math.round(depth * 10) : 10 + Math.round(depth * 5);
+        const on = i === active;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-hidden', String(!on));
+        $$('button', c).forEach((b) => (b.tabIndex = on ? 0 : -1));
+      });
+      dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === active)));
+    }
+    function announce() { const a = cards[mod(target)]; live.textContent = a.querySelector('h3').textContent; }
+    function animate() {
+      cancelAnimationFrame(raf);
+      const step = () => {
+        const diff = target - rot;
+        if (Math.abs(diff) < 0.002 || RM) { rot = target; render(); return; }
+        rot += diff * 0.14; render(); raf = requestAnimationFrame(step);
+      };
+      step();
+    }
+    function goTo(i) {
+      const cur = mod(Math.round(target));
+      let delta = i - cur;
+      if (delta > N / 2) delta -= N; if (delta < -N / 2) delta += N;
+      target = Math.round(target) + delta; animate(); announce();
+    }
+    const move = (dir) => { target = Math.round(target) + dir; animate(); announce(); };
+
+    // Drag / swipe
+    let down = false, dragging = false, x0 = 0, rot0 = 0, pid = null;
+    box.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      down = true; dragging = false; x0 = e.clientX; rot0 = rot; pid = e.pointerId;
+      cancelAnimationFrame(raf);
+    });
+    box.addEventListener('pointermove', (e) => {
+      if (!down) return;
+      const dx = e.clientX - x0;
+      if (!dragging && Math.abs(dx) > 6) { dragging = true; box.classList.add('is-dragging'); try { box.setPointerCapture(pid); } catch (err) { /* ignore */ } }
+      if (dragging) { rot = rot0 - dx / (Rx * 0.95); render(); }
+    });
+    const end = (e) => {
+      if (!down) return; down = false;
+      if (!dragging) { rot = rot0; return; }
+      box.classList.remove('is-dragging');
+      const dx = e.clientX - x0;
+      let t2 = Math.round(rot);
+      if (t2 === Math.round(rot0) && Math.abs(dx) > 40) t2 = Math.round(rot0) - Math.sign(dx);
+      target = t2; animate(); announce();
+      box.dataset.justDragged = '1'; setTimeout(() => delete box.dataset.justDragged, 50);
+    };
+    box.addEventListener('pointerup', end); box.addEventListener('pointercancel', end);
+    // Tap a side card to bring it to the front
+    cards.forEach((c, i) => c.addEventListener('click', (e) => {
+      if (box.dataset.justDragged) { e.stopPropagation(); e.preventDefault(); return; }
+      if (!c.classList.contains('is-active')) { e.stopPropagation(); e.preventDefault(); goTo(i); }
+    }, true));
+    box.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); move(isAr() ? 1 : -1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); move(isAr() ? -1 : 1); }
+    });
+    $$('.orbit__arrow').forEach((b) => b.addEventListener('click', () => move(+b.dataset.step)));
+    addEventListener('resize', () => { measure(); render(); });
+
+    measure(); rot = target = 1; render();
+  })();
+
   $('#yr').textContent = new Date().getFullYear();
   syncHash();
 })();

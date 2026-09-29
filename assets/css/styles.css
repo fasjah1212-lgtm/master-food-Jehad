@@ -118,37 +118,75 @@ html[dir="rtl"] .btn .flip { transform: scaleX(-1); }
 }
 @media (min-width: 961px) { .nav .nav__cta { display: none; } }
 
-/* ---------- Hero (the one distinctive section) ---------- */
-.hero { position: relative; min-height: min(80vh, 760px); min-height: min(80svh, 760px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: #2a1d17; isolation: isolate; }
-.hero__media { position: absolute; inset: 0; z-index: -2; }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; animation: heroZoom 2.4s var(--ease) both; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(to top, rgba(22, 14, 12, .92) 0%, rgba(22, 14, 12, .55) 45%, rgba(22, 14, 12, .25) 100%); }
-html[dir="rtl"] .hero::after, html[dir="ltr"] .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: linear-gradient(to left, rgba(22, 14, 12, .55), transparent 60%); }
-html[dir="ltr"] .hero::after { background: linear-gradient(to right, rgba(22, 14, 12, .55), transparent 60%); }
-.hero { margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
-.hero__in { padding-block: 48px clamp(48px, 8vh, 88px); }
-.hero__logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 22px; }
-.hero__logo img { width: auto; height: 96px; filter: drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
-.hero__logo b { font-weight: 800; font-size: 1.25rem; line-height: 1.2; display: block; }
-.hero__logo b.en { font-family: var(--f-en); letter-spacing: .1em; font-size: 1.125rem; }
-html[lang="ar"] .hero__logo b.en, html[lang="en"] .hero__logo b.ar, html[lang="ar"] .logo b.en, html[lang="en"] .logo b.ar { display: none; }
-.hero__logo small { font-size: .8125rem; opacity: .85; }
-.hero h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 800; line-height: 1.25; max-width: 18ch; }
-.hero h1 em { font-style: normal; color: var(--gold); }
-.hero p { margin-top: 16px; font-size: clamp(1rem, 1.4vw, 1.1875rem); max-width: 54ch; color: rgba(255,255,255,.88); }
-.hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-.hero__tags { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.2); font-size: .875rem; color: rgba(255,255,255,.8); }
-.hero__tags > span { display: inline-flex; align-items: center; gap: 8px; }
-.hero__tags > span::before { content: ""; width: 8px; height: 10px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; background: var(--gold); }
-/* Entrance: text fades in once */
-.hero__in > * { animation: rise .9s var(--ease) both; }
-.hero__in > *:nth-child(2) { animation-delay: .12s; }
-.hero__in > *:nth-child(3) { animation-delay: .24s; }
-.hero__in > *:nth-child(4) { animation-delay: .36s; }
-.hero__in > *:nth-child(5) { animation-delay: .48s; }
-@keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+/* ---------- Hero: interactive corn showcase ----------
+   Farm photo as a soft, far background; the corn cob stands in the middle;
+   product cards orbit around it and follow drag / swipe / arrows. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.show { position: relative; margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); padding-block: clamp(24px, 3.5vw, 40px) 24px; overflow: hidden; isolation: isolate; background: var(--cream); }
+.show__bg { position: absolute; inset: 0; z-index: -1; }
+.show__bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(2px) saturate(1.05); transform: scale(1.03); }
+.show__bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(252, 248, 240, .86) 0%, rgba(252, 248, 240, .55) 30%, rgba(252, 248, 240, .08) 62%, rgba(250, 248, 243, .75) 92%, var(--paper) 100%); }
+.show__head { text-align: center; display: grid; justify-items: center; gap: 10px; animation: rise .8s var(--ease) both; }
+.show__head h1 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.3; max-width: 30ch; }
+.show__head h1 em { font-style: normal; color: var(--red); }
+.show__head p { color: var(--ink-2); }
+.show__ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+
+.orbit { position: relative; height: clamp(440px, 36vw, 500px); max-width: 1100px; margin: 8px auto 0; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; outline: none; }
+.orbit.is-dragging { cursor: grabbing; }
+.orbit:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 24px; }
+.orbit__corn { position: absolute; left: 50%; top: 2%; height: 86%; width: auto; transform: translateX(-50%); z-index: 20; pointer-events: none; filter: drop-shadow(0 26px 30px rgba(70, 50, 10, .28)); animation: cornIn 1s var(--ease) both; }
+.orbit__shadow { position: absolute; left: 50%; bottom: 4%; width: 300px; height: 40px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(60, 40, 10, .35), transparent); z-index: 1; }
+@keyframes cornIn { from { opacity: 0; transform: translateX(-50%) translateY(24px) scale(.96); } }
+
+.ocard {
+  position: absolute; left: 50%; top: 50%; width: 250px;
+  display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start;
+  padding: 14px; border-radius: 18px;
+  background: rgba(255, 255, 255, .9); border: 1px solid rgba(255, 255, 255, .8);
+  box-shadow: 0 16px 36px -18px rgba(40, 25, 10, .45);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transform: translate(-50%, -50%); will-change: transform, opacity; cursor: pointer;
+  transition: box-shadow .3s, border-color .3s;
+}
+.ocard > * { min-width: 0; }
+.ocard__thumb { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
+.ocard__en { display: block; font: 600 .6875rem/1.2 var(--f-en); letter-spacing: .08em; text-transform: uppercase; color: var(--leaf); }
+.ocard h3 { font-size: 1.0625rem; margin-top: 2px; }
+.ocard p, .ocard .btn { display: none; }
+.ocard.is-active { cursor: default; border-color: rgba(233, 195, 80, .9); box-shadow: 0 24px 48px -20px rgba(40, 25, 10, .5), 0 0 0 3px rgba(233, 195, 80, .25); }
+.ocard.is-active p { display: block; font-size: .875rem; color: var(--ink-2); line-height: 1.65; margin-top: 4px; }
+.ocard.is-active .btn { display: inline-flex; margin-top: 10px; min-height: 36px; padding: 0 16px; font-size: .8125rem; }
+.ocard.is-active h3 { color: var(--red); }
+
+.orbit__nav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 4px; }
+.orbit__arrow { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--white); cursor: pointer; display: grid; place-items: center; box-shadow: 0 4px 12px -6px rgba(0,0,0,.2); }
+.orbit__arrow:hover { border-color: var(--red); }
+.orbit__arrow svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+html[dir="rtl"] .orbit__arrow svg { transform: scaleX(-1); }
+.orbit__dots { display: flex; gap: 8px; }
+.orbit__dots button { width: 9px; height: 9px; padding: 0; border-radius: 99px; border: 0; background: rgba(29, 36, 32, .22); cursor: pointer; transition: width .3s var(--ease), background .3s; }
+.orbit__dots button[aria-selected="true"] { width: 26px; background: var(--red); }
+.orbit__hint { text-align: center; font-size: .8125rem; color: var(--ink-2); margin-top: 10px; }
+
+/* Without JS: simple list under the corn */
+html:not(.js) .orbit { height: auto; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding-top: 520px; }
+html:not(.js) .ocard { position: static; transform: none; }
+html:not(.js) .orbit__nav, html:not(.js) .orbit__hint { display: none; }
+
+@media (max-width: 700px) {
+  .orbit { height: 520px; }
+  .orbit__corn { top: 2%; height: 60%; }
+  .orbit__shadow { width: 180px; bottom: 36%; }
+  /* Side cards shrink to round product thumbnails; the active card opens below the corn */
+  .ocard:not(.is-active) { width: auto; display: block; padding: 4px; border-radius: 50%; }
+  .ocard:not(.is-active) .ocard__text { display: none; }
+  .ocard:not(.is-active) .ocard__thumb { width: 54px; height: 54px; border-radius: 50%; }
+  .ocard.is-active { width: min(290px, 86vw); grid-template-columns: 48px 1fr; padding: 12px; }
+  .ocard.is-active .ocard__thumb { width: 48px; height: 48px; }
+  .ocard.is-active p { font-size: .8125rem; }
+}
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 /* ---------- About (split) ---------- */
