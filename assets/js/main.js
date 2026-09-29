@@ -7,12 +7,9 @@
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isAr = () => root.lang !== 'en';
   const t = (o) => (typeof o === 'string' ? o : o[isAr() ? 'ar' : 'en']);
-  const EMAIL = 'masterfood@ftinco.com';
   const px = (id, w) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
-  /* Product content — taken from the official master-food.co pages.
-     Where the site publishes no detail, the dialog says so. */
-  const NONE = { ar: 'لم تُنشر تفاصيل فنية إضافية لهذا المنتج. تواصل معنا للحصول على المواصفات.', en: 'No further technical details are published for this product. Contact us for specifications.' };
+  /* Product content — taken from the official master-food.co pages. */
   const PRODUCTS = {
     'corn-starch': {
       img: 8477743, name: { ar: 'نشاء الذرة', en: 'Corn Starch' },
@@ -26,21 +23,11 @@
       uses: { ar: ['الحلوى', 'المخبوزات', 'المارشميلو', 'السموذي', 'المربى', 'الحلويات الصلبة'], en: ['Candy', 'Bakery', 'Marshmallows', 'Smoothies', 'Jams', 'Hard desserts'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'نشاء الذرة', en: 'Corn starch' }], [{ ar: 'الحلاوة', en: 'Sweetness' }, { ar: 'متوسطة، تُبرز النكهات الفاكهية', en: 'Medium, enhances fruity flavors' }], [{ ar: 'اللزوجة', en: 'Viscosity' }, { ar: 'متوسطة', en: 'Medium' }]]
     },
-    'corn-germ': {
-      img: 8467428, name: { ar: 'جنين الذرة', en: 'Corn Germ' },
-      desc: { ar: 'يُفصل من حبة الذرة كمنتج مستقل ضمن منتجات مصنع ماستر فود.', en: 'Separated from the corn kernel as one of Master Food’s products.' },
-      uses: null, facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'حبة الذرة', en: 'Corn kernel' }]]
-    },
     'gluten-feed': {
       img: 10759382, name: { ar: 'جلوتوفيد 16%', en: 'Glutofed 16%' },
       desc: { ar: 'منتج طبيعي يُحصل عليه أثناء إنتاج النشاء من الذرة، ويُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.', en: 'A natural product obtained during starch production from corn, used in livestock feed as a source of energy and protein.' },
       uses: { ar: ['أعلاف الماشية'], en: ['Livestock feed'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'إنتاج النشاء من الذرة', en: 'Starch production from corn' }], [{ ar: 'القيمة', en: 'Value' }, { ar: 'مصدر للطاقة والبروتين', en: 'Energy and protein' }]]
-    },
-    'gluten-meal': {
-      img: 5463228, name: { ar: 'جلوتين ميل 60%', en: 'Gluten Meal 60%' },
-      desc: { ar: 'أحد منتجات الذرة في مصنع ماستر فود.', en: 'One of Master Food’s corn products.' },
-      uses: null, facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'الذرة', en: 'Corn' }]]
     }
   };
 
@@ -88,7 +75,7 @@
       <h2 id="pd-title">${t(p.name)}</h2>
       <p>${t(p.desc)}</p>
       <h4>${ar ? 'الاستخدامات' : 'Uses'}</h4>
-      ${p.uses ? `<div class="pill-row">${t(p.uses).map((u) => `<span class="pill">${u}</span>`).join('')}</div>` : `<p class="pd__note">${t(NONE)}</p>`}
+      <div class="pill-row">${t(p.uses).map((u) => `<span class="pill">${u}</span>`).join('')}</div>
       <h4>${ar ? 'معلومات المنتج' : 'Product information'}</h4>
       <dl class="pd__facts">${p.facts.map(([k, v]) => `<div><dt>${t(k)}</dt><dd>${t(v)}</dd></div>`).join('')}</dl>
       <div><a class="btn" href="#contact" data-inquire="${t(p.name)}">${ar ? 'استفسر عن المنتج' : 'Ask about this product'}</a></div>`;
@@ -111,40 +98,11 @@
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-product]'); if (b) { openProduct(b.dataset.product, true); return; }
     if (e.target.closest('[data-close]')) { closeProduct(); return; }
-    const q = e.target.closest('[data-inquire]');
-    if (q) {
-      closeProduct();
-      const msg = $('#f-msg');
-      if (!msg.value.trim()) msg.value = (isAr() ? 'أرغب بالاستفسار عن: ' : 'I would like to ask about: ') + q.dataset.inquire + '\n';
-    }
+    if (e.target.closest('[data-inquire]')) closeProduct();
   });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProduct(); });
   const syncHash = () => { const id = location.hash.slice(1); if (PRODUCTS[id]) openProduct(id, false); else closeProduct(); };
   addEventListener('hashchange', syncHash); addEventListener('popstate', syncHash);
-
-  /* ---------- Contact form (static site: prepares an email to the official address) ---------- */
-  const form = $('#form'), status = $('#f-status');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let ok = true;
-    $$('.field', form).forEach((f) => { f.classList.remove('is-err'); $('.err', f)?.remove(); });
-    $$('[required], [type=email]', form).forEach((el) => {
-      const v = el.value.trim();
-      const bad = (el.required && !v) || (el.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-      if (!bad) return;
-      ok = false;
-      const f = el.closest('.field'); f.classList.add('is-err');
-      const m = document.createElement('span'); m.className = 'err';
-      m.textContent = el.required && !v ? (isAr() ? 'هذا الحقل مطلوب.' : 'This field is required.') : (isAr() ? 'أدخل بريدًا إلكترونيًا صحيحًا.' : 'Enter a valid email address.');
-      f.appendChild(m);
-    });
-    if (!ok) { $('.is-err .input', form)?.focus(); return; }
-    const d = new FormData(form);
-    const body = [`Name: ${d.get('name')}`, `Company: ${d.get('company') || '-'}`, `Mobile: ${d.get('phone')}`, `Email: ${d.get('email') || '-'}`, '', d.get('message')].join('\n');
-    const href = `mailto:${EMAIL}?subject=${encodeURIComponent('Master Food - ' + (isAr() ? 'استفسار' : 'Inquiry'))}&body=${encodeURIComponent(body)}`;
-    status.innerHTML = isAr() ? `تم تجهيز رسالتك. <a href="${href}">اضغط هنا لإرسالها عبر البريد</a>` : `Your message is ready. <a href="${href}">Click here to send it by email</a>`;
-    location.href = href;
-  });
 
   /* ---------- Reveal on scroll + light counter ---------- */
   if ('IntersectionObserver' in window && !RM) {
