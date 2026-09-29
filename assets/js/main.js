@@ -12,7 +12,7 @@
   /* Product content — taken from the official master-food.co pages. */
   const PRODUCTS = {
     'corn-starch': {
-      img: 8477743, name: { ar: 'نشاء الذرة', en: 'Corn Starch' },
+      img: 'assets/img/corn-starch.webp', name: { ar: 'نشاء الذرة', en: 'Corn Starch' },
       desc: { ar: 'مسحوق أبيض طبيعي، عديم الرائحة، ذو طعم متعادل، يُستخلص من حبوب الذرة.', en: 'A natural white powder, odorless, with a neutral taste, obtained from corn kernels.' },
       uses: { ar: ['العديد من الصناعات الغذائية'], en: ['Many food industries'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'حبوب الذرة', en: 'Corn kernels' }], [{ ar: 'الشكل', en: 'Form' }, { ar: 'مسحوق أبيض', en: 'White powder' }], [{ ar: 'الرائحة', en: 'Odor' }, { ar: 'عديم الرائحة', en: 'Odorless' }], [{ ar: 'الطعم', en: 'Taste' }, { ar: 'متعادل', en: 'Neutral' }]]
@@ -24,7 +24,7 @@
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'نشاء الذرة', en: 'Corn starch' }], [{ ar: 'الحلاوة', en: 'Sweetness' }, { ar: 'متوسطة، تُبرز النكهات الفاكهية', en: 'Medium, enhances fruity flavors' }], [{ ar: 'اللزوجة', en: 'Viscosity' }, { ar: 'متوسطة', en: 'Medium' }]]
     },
     'gluten-feed': {
-      img: 10759382, name: { ar: 'جلوتوفيد 16%', en: 'Glutofed 16%' },
+      img: 'assets/img/gluten-feed.webp', name: { ar: 'جلوتوفيد 16%', en: 'Glutofed 16%' },
       desc: { ar: 'منتج طبيعي يُحصل عليه أثناء إنتاج النشاء من الذرة، ويُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.', en: 'A natural product obtained during starch production from corn, used in livestock feed as a source of energy and protein.' },
       uses: { ar: ['أعلاف الماشية'], en: ['Livestock feed'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'إنتاج النشاء من الذرة', en: 'Starch production from corn' }], [{ ar: 'القيمة', en: 'Value' }, { ar: 'مصدر للطاقة والبروتين', en: 'Energy and protein' }]]
@@ -69,7 +69,7 @@
     const p = PRODUCTS[id], ar = isAr();
     const img = $('#pd-img');
     img.parentElement.classList.remove('noimg');
-    img.src = px(p.img, 1200); img.alt = t(p.name);
+    img.src = typeof p.img === 'number' ? px(p.img, 1200) : p.img; img.alt = t(p.name);
     $('#pd-body').innerHTML = `
       <span class="eyebrow">${ar ? 'منتجاتنا' : 'Our products'}</span>
       <h2 id="pd-title">${t(p.name)}</h2>
