@@ -23,6 +23,13 @@
       uses: { ar: ['الحلوى', 'المخبوزات', 'المارشميلو', 'السموذي', 'المربى', 'الحلويات الصلبة'], en: ['Candy', 'Bakery', 'Marshmallows', 'Smoothies', 'Jams', 'Hard desserts'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'نشاء الذرة', en: 'Corn starch' }], [{ ar: 'الحلاوة', en: 'Sweetness' }, { ar: 'متوسطة، تُبرز النكهات الفاكهية', en: 'Medium, enhances fruity flavors' }], [{ ar: 'اللزوجة', en: 'Viscosity' }, { ar: 'متوسطة', en: 'Medium' }]]
     },
+    'corn-germ': {
+      img: 'assets/img/corn-germ.webp', name: { ar: 'جنين الذرة', en: 'Corn Germ' },
+      desc: { ar: 'منتج طبيعي يُحصل عليه خلال مرحلة إنتاج النشا من الذرة.', en: 'A natural product obtained during starch production from corn.' },
+      uses: { ar: ['إنتاج زيت الذرة الخام', 'صناعة الأعلاف'], en: ['Crude corn oil production', 'Feed manufacturing'] },
+      specTitle: { ar: 'المواصفات', en: 'Specifications' },
+      facts: [[{ ar: 'الرطوبة', en: 'Moisture' }, { ar: '6% كحد أقصى', en: '6% max' }], [{ ar: 'البروتين', en: 'Protein' }, { ar: '10% كحد أقصى', en: '10% max' }], [{ ar: 'الدهون', en: 'Fat' }, { ar: '43% كحد أدنى', en: '43% min' }], [{ ar: 'النشا', en: 'Starch' }, { ar: '20% كحد أقصى', en: '20% max' }]]
+    },
     'gluten-feed': {
       img: 'assets/img/gluten-feed.webp', name: { ar: 'جلوتوفيد 16%', en: 'Glutofed 16%' },
       desc: { ar: 'منتج طبيعي يُحصل عليه أثناء إنتاج النشاء من الذرة، ويُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.', en: 'A natural product obtained during starch production from corn, used in livestock feed as a source of energy and protein.' },
@@ -76,7 +83,7 @@
       <p>${t(p.desc)}</p>
       <h4>${ar ? 'الاستخدامات' : 'Uses'}</h4>
       <div class="pill-row">${t(p.uses).map((u) => `<span class="pill">${u}</span>`).join('')}</div>
-      <h4>${ar ? 'معلومات المنتج' : 'Product information'}</h4>
+      <h4>${p.specTitle ? t(p.specTitle) : (ar ? 'معلومات المنتج' : 'Product information')}</h4>
       <dl class="pd__facts">${p.facts.map(([k, v]) => `<div><dt>${t(k)}</dt><dd>${t(v)}</dd></div>`).join('')}</dl>
       <div><a class="btn" href="#contact" data-inquire="${t(p.name)}">${ar ? 'استفسر عن المنتج' : 'Ask about this product'}</a></div>`;
     pd.dataset.id = id;
