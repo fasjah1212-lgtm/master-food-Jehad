@@ -140,26 +140,28 @@
     const box = $('#orbit'); if (!box) return;
     const cards = $$('.ocard', box), N = cards.length, TAU = Math.PI * 2;
     const live = $('#orbit-live');
-    let rot = 0, target = 0, raf = 0, Rx = 380, Ry = 150, cy = 0;
+    let rot = 0, target = 0, raf = 0;
 
 
+    let mobile = false, gap1 = 250, gap2 = 215;
     function measure() {
-      const w = box.clientWidth, h = box.clientHeight, mobile = w < 700;
-      Rx = mobile ? Math.min(w * 0.42, 170) : Math.min(w * 0.38, 400);
-      Ry = mobile ? h * 0.28 : h * 0.26;
-      cy = mobile ? h * 0.08 : h * 0.03;
+      const w = box.clientWidth; mobile = w < 700;
+      gap1 = mobile ? Math.min(w / 2 - 34, 165) : Math.min(w * 0.23, 255);
+      gap2 = mobile ? 60 : Math.min(w * 0.2, 220);
     }
     const mod = (n) => ((n % N) + N) % N;
     function render() {
       const active = mod(Math.round(rot));
       cards.forEach((c, i) => {
-        const a = ((i - rot) / N) * TAU;
-        const s = Math.sin(a), co = Math.cos(a), depth = (co + 1) / 2;
-        const x = s * Rx, y = cy + co * Ry;
-        const scale = 0.7 + 0.3 * depth;
-        c.style.transform = `translate(-50%, -50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
-        c.style.opacity = (0.35 + 0.65 * depth).toFixed(3);
-        c.style.zIndex = co > -0.25 ? 30 + Math.round(depth * 10) : 10 + Math.round(depth * 5);
+        // signed distance from the centre slot, wrapped to [-N/2, N/2)
+        const k = mod(i - rot + N / 2) - N / 2, a = Math.abs(k);
+        const x = Math.sign(k) * (a <= 1 ? a * gap1 : gap1 + (a - 1) * gap2);
+        const scale = mobile ? 1 : 1 - 0.1 * Math.min(a, 2.5);
+        const fade = mobile ? Math.max(0, 1 - Math.max(0, a - 1) * 1.6) : Math.max(0, 1 - Math.pow(a / 2.6, 3));
+        c.style.transform = `translateX(-50%) translateX(${x.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+        c.style.opacity = fade.toFixed(3);
+        c.style.zIndex = 100 - Math.round(a * 10);
+        c.style.pointerEvents = fade < 0.15 ? 'none' : '';
         const on = i === active;
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-hidden', String(!on));
@@ -195,7 +197,7 @@
       if (!down) return;
       const dx = e.clientX - x0;
       if (!dragging && Math.abs(dx) > 6) { dragging = true; box.classList.add('is-dragging'); try { box.setPointerCapture(pid); } catch (err) { /* ignore */ } }
-      if (dragging) { rot = rot0 - dx / (Rx * 0.95); render(); }
+      if (dragging) { rot = rot0 - dx / gap1; render(); }
     });
     const end = (e) => {
       if (!down) return; down = false;
