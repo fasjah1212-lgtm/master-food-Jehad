@@ -18,7 +18,7 @@
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'حبوب الذرة', en: 'Corn kernels' }], [{ ar: 'الشكل', en: 'Form' }, { ar: 'مسحوق أبيض', en: 'White powder' }], [{ ar: 'الرائحة', en: 'Odor' }, { ar: 'عديم الرائحة', en: 'Odorless' }], [{ ar: 'الطعم', en: 'Taste' }, { ar: 'متعادل', en: 'Neutral' }]]
     },
     'glucose-syrup': {
-      img: 5634210, name: { ar: 'شراب الجلوكوز', en: 'Glucose Syrup' },
+      img: 'assets/img/glucose-syrup.webp', name: { ar: 'شراب الجلوكوز', en: 'Glucose Syrup' },
       desc: { ar: 'شراب سائل مركّز ومنقّى من السكر الطبيعي، يُحصل عليه من نشاء الذرة بالتحلل المائي الحمضي أو الإنزيمي.', en: 'A concentrated, purified liquid syrup of natural sugar, obtained from corn starch by acidic or enzymatic hydrolysis.' },
       uses: { ar: ['الحلوى', 'المخبوزات', 'المارشميلو', 'السموذي', 'المربى', 'الحلويات الصلبة'], en: ['Candy', 'Bakery', 'Marshmallows', 'Smoothies', 'Jams', 'Hard desserts'] },
       facts: [[{ ar: 'المصدر', en: 'Source' }, { ar: 'نشاء الذرة', en: 'Corn starch' }], [{ ar: 'الحلاوة', en: 'Sweetness' }, { ar: 'متوسطة، تُبرز النكهات الفاكهية', en: 'Medium, enhances fruity flavors' }], [{ ar: 'اللزوجة', en: 'Viscosity' }, { ar: 'متوسطة', en: 'Medium' }]]
