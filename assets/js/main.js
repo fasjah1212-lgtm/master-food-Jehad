@@ -135,20 +135,13 @@
     $$('.rv').forEach((el) => el.classList.add('in'));
   }
 
-  /* ---------- Hero: product cards orbiting the corn (drag / swipe / arrows / keys) ---------- */
+  /* ---------- Products: cards orbiting the corn (drag / swipe; keyboard arrows for accessibility) ---------- */
   (function orbitShowcase() {
     const box = $('#orbit'); if (!box) return;
     const cards = $$('.ocard', box), N = cards.length, TAU = Math.PI * 2;
-    const dotsBox = $('.orbit__dots'), live = $('#orbit-live');
+    const live = $('#orbit-live');
     let rot = 0, target = 0, raf = 0, Rx = 380, Ry = 150, cy = 0;
 
-    cards.forEach((c, i) => {
-      const d = document.createElement('button');
-      d.type = 'button'; d.setAttribute('role', 'tab'); d.setAttribute('aria-label', c.querySelector('.ocard__en').textContent);
-      d.addEventListener('click', () => goTo(i));
-      dotsBox.appendChild(d);
-    });
-    const dots = $$('button', dotsBox);
 
     function measure() {
       const w = box.clientWidth, h = box.clientHeight, mobile = w < 700;
@@ -172,7 +165,6 @@
         c.setAttribute('aria-hidden', String(!on));
         $$('button', c).forEach((b) => (b.tabIndex = on ? 0 : -1));
       });
-      dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === active)));
     }
     function announce() { const a = cards[mod(target)]; live.textContent = a.querySelector('h3').textContent; }
     function animate() {
@@ -225,7 +217,6 @@
       if (e.key === 'ArrowLeft') { e.preventDefault(); move(isAr() ? 1 : -1); }
       if (e.key === 'ArrowRight') { e.preventDefault(); move(isAr() ? -1 : 1); }
     });
-    $$('.orbit__arrow').forEach((b) => b.addEventListener('click', () => move(+b.dataset.step)));
     addEventListener('resize', () => { measure(); render(); });
 
     measure(); rot = target = 1; render();

@@ -11,8 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=IBM+Plex+Sans:wght@400;500;700&display=swap">
-<link rel="preload" as="image" href="assets/img/farm-bg.webp" imagesrcset="assets/img/farm-bg-960.webp 960w, assets/img/farm-bg.webp 1920w" imagesizes="100vw">
-<link rel="preload" as="image" href="assets/img/corn-cob.webp" imagesrcset="assets/img/corn-cob-640.webp 494w, assets/img/corn-cob.webp 849w" imagesizes="(max-width: 700px) 260px, 380px">
+<link rel="preload" as="image" href="assets/img/corn-hero.webp" imagesrcset="assets/img/corn-hero-1200.webp 1200w, assets/img/corn-hero.webp 2400w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('mf-lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
 </head>
@@ -47,24 +46,65 @@
 
 <main id="main">
 
-<!-- ============ 1. Hero: interactive corn showcase ============ -->
-<section class="show" id="home" aria-labelledby="show-title">
-  <div class="show__bg" aria-hidden="true">
-    <img src="assets/img/farm-bg.webp" srcset="assets/img/farm-bg-960.webp 960w, assets/img/farm-bg.webp 1920w" sizes="100vw" alt="" width="1920" height="1081" decoding="async" fetchpriority="high">
-  </div>
-  <div class="wrap show__head">
-    <span class="eyebrow"><span class="ar">كل منتجاتنا تبدأ من الذرة</span><span class="en">Every product starts with corn</span></span>
-    <h1 id="show-title"><span class="ar">مكونات غذائية <em>من الذرة</em>، بجودة يُعتمد عليها.</span><span class="en">Food ingredients <em>from corn</em>, with quality you can rely on.</span></h1>
-    <p><span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود، القصيم – بريدة.</span><span class="en">Alfozan Food Industries Factory – Master Food, Buraydah, Qassim.</span></p>
-    <div class="show__ctas">
-      <a class="btn" href="#products"><span class="ar">استكشف المنتجات</span><span class="en">Explore products</span></a>
-      <a class="btn btn--line" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a>
+<!-- ============ 1. Hero ============ -->
+<section class="hero" id="home">
+  <div class="hero__media"><img src="assets/img/corn-hero.webp" srcset="assets/img/corn-hero-1200.webp 1200w, assets/img/corn-hero.webp 2400w" sizes="100vw" alt="كيزان الذرة الصفراء" width="2400" height="1447" loading="eager" decoding="async" fetchpriority="high"></div>
+  <div class="wrap hero__in">
+    <div class="hero__logo">
+      <img src="assets/img/logo-mark.webp" alt="Master Food" width="90" height="96">
+      <span><b class="ar">ماستر فود</b><b class="en">MASTER FOOD</b><small><span class="ar">مصنع شركة الفوزان للصناعات الغذائية</span><span class="en">Alfozan Food Industries Factory</span></small></span>
     </div>
+    <h1><span class="ar">مكونات غذائية <em>من الذرة</em>، بجودة يُعتمد عليها.</span><span class="en">Food ingredients <em>from corn</em>, with quality you can rely on.</span></h1>
+    <p><span class="ar">ننتج في مصنعنا بالقصيم – بريدة النشاء والجلوكوز المستخلص من الذرة الصفراء، لاستخدامه في العديد من الصناعات الغذائية.</span><span class="en">At our factory in Buraydah, Qassim, we produce starch and glucose extracted from yellow corn for use across many food industries.</span></p>
+    <div class="hero__ctas">
+      <a class="btn btn--gold" href="#products"><span class="ar">استكشف المنتجات</span><span class="en">Explore products</span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="btn btn--light" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a>
+    </div>
+    <div class="hero__tags" aria-label="Products">
+      <span><span class="ar">نشاء الذرة</span><span class="en">Corn Starch</span></span>
+      <span><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></span>
+      <span><span class="ar">جنين الذرة</span><span class="en">Corn Germ</span></span>
+      <span><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></span>
+      <span><span class="ar">جلوتين ميل 60%</span><span class="en">Gluten Meal 60%</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. About ============ -->
+<section class="section section--white" id="about">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow"><span class="ar">من نحن</span><span class="en">About us</span></span>
+      <h2 class="title"><span class="ar">عن Master Food</span><span class="en">About Master Food</span></h2>
+      <p class="lead"><span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود، في القصيم – بريدة. تأسست شركة الفوزان للصناعات الغذائية منذ أكثر من 40 عامًا لمواكبة التطور الصناعي، وأُسِّس المصنع لإنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء.</span><span class="en">Alfozan Food Industries Factory – Master Food, in Buraydah, Qassim. Alfozan Food Industries was established more than 40 years ago to keep pace with industrial development, and the factory was set up to produce starch and glucose extracted from yellow corn.</span></p>
+      <ul class="checks">
+        <li><span class="ar">إنتاج النشاء والجلوكوز من الذرة الصفراء</span><span class="en">Starch and glucose produced from yellow corn</span></li>
+        <li><span class="ar">منتجات تدخل في العديد من الصناعات الغذائية</span><span class="en">Products used across many food industries</span></li>
+        <li><span class="ar">رقابة جودة في جميع مراحل التشغيل</span><span class="en">Quality control at every stage of operation</span></li>
+      </ul>
+      <button class="btn btn--line" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreText"><span class="ar">اعرف المزيد</span><span class="en">Learn more</span></button>
+      <div class="more" id="moreText" hidden>
+        <p><span class="ar">نجاحنا يعتمد على تقديم منتجات عالية الجودة تلبي توقعات العملاء وتتجاوزها، وعلى ضمان جودة وسلامة جميع المنتجات المصنّعة. ولهذا نعتمد نظام رقابة دورية في جميع مراحل التشغيل، لاكتشاف أي انحرافات مبكرًا واتخاذ الإجراءات اللازمة لحماية صحة المستهلك وجودة المنتج وفق المعايير الدولية.</span><span class="en">Our success depends on providing high-quality products that meet and exceed customer expectations, and on ensuring the quality and food safety of every product we manufacture. That is why we run periodic monitoring across all stages of operation, to catch any deviation early and take the necessary measures to protect consumer health and product quality in line with international standards.</span></p>
+      </div>
+    </div>
+    <figure class="photo rv" style="margin:0"><img src="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(max-width: 860px) 100vw, 50vw" alt="معدات تصنيع من الستانلس ستيل" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<!-- ============ 3. Products: corn showcase (drag / swipe) ============ -->
+<section class="show" id="products" aria-labelledby="prod-title">
+  <div class="show__bg" aria-hidden="true">
+    <img src="assets/img/farm-bg.webp" srcset="assets/img/farm-bg-960.webp 960w, assets/img/farm-bg.webp 1920w" sizes="100vw" alt="" width="1920" height="1081" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap show__head rv">
+    <span class="eyebrow"><span class="ar">منتجاتنا</span><span class="en">Our products</span></span>
+    <h2 id="prod-title"><span class="ar">كل منتجاتنا تبدأ <em>من الذرة</em></span><span class="en">Every product starts <em>with corn</em></span></h2>
+    <p><span class="ar">خمسة منتجات مستخلصة من الذرة الصفراء.</span><span class="en">Five products extracted from yellow corn.</span></p>
   </div>
 
   <div class="orbit" id="orbit" tabindex="0" role="region" aria-roledescription="carousel" aria-label="منتجات ماستر فود">
     <div class="orbit__shadow" aria-hidden="true"></div>
-    <img class="orbit__corn" src="assets/img/corn-cob.webp" srcset="assets/img/corn-cob-640.webp 494w, assets/img/corn-cob.webp 849w" sizes="(max-width: 700px) 260px, 380px" alt="كوز ذرة صفراء" width="849" height="1100" draggable="false" decoding="async">
+    <img class="orbit__corn" loading="lazy" src="assets/img/corn-cob.webp" srcset="assets/img/corn-cob-640.webp 494w, assets/img/corn-cob.webp 849w" sizes="(max-width: 700px) 260px, 380px" alt="كوز ذرة صفراء" width="849" height="1100" draggable="false" decoding="async">
     <article class="ocard" data-i="0">
       <img class="ocard__thumb" src="assets/img/corn-germ.webp" alt="" width="56" height="56" loading="lazy" draggable="false">
       <div class="ocard__text">
@@ -112,95 +152,8 @@
     </article>
   </div>
 
-  <div class="orbit__nav wrap">
-    <button class="orbit__arrow" type="button" data-step="-1" aria-label="السابق"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
-    <div class="orbit__dots" role="tablist" aria-label="المنتجات"></div>
-    <button class="orbit__arrow" type="button" data-step="1" aria-label="التالي"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
-  </div>
-  <p class="orbit__hint" aria-hidden="true"><span class="ar">اسحب يمينًا أو يسارًا لاستكشاف المنتجات</span><span class="en">Drag left or right to explore the products</span></p>
+  <p class="orbit__hint" aria-hidden="true"><svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h20M5 3 1 7l4 4M17 3l4 4-4 4"/></svg><span class="ar">اسحب يمينًا أو يسارًا لاستكشاف المنتجات</span><span class="en">Drag left or right to explore the products</span></p>
   <p class="sr-only" id="orbit-live" aria-live="polite"></p>
-</section>
-
-<!-- ============ 2. About ============ -->
-<section class="section section--white" id="about">
-  <div class="wrap split">
-    <div class="rv">
-      <span class="eyebrow"><span class="ar">من نحن</span><span class="en">About us</span></span>
-      <h2 class="title"><span class="ar">عن Master Food</span><span class="en">About Master Food</span></h2>
-      <p class="lead"><span class="ar">مصنع شركة الفوزان للصناعات الغذائية – ماستر فود، في القصيم – بريدة. تأسست شركة الفوزان للصناعات الغذائية منذ أكثر من 40 عامًا لمواكبة التطور الصناعي، وأُسِّس المصنع لإنتاج النشاء والجلوكوز المستخلص من الذرة الصفراء.</span><span class="en">Alfozan Food Industries Factory – Master Food, in Buraydah, Qassim. Alfozan Food Industries was established more than 40 years ago to keep pace with industrial development, and the factory was set up to produce starch and glucose extracted from yellow corn.</span></p>
-      <ul class="checks">
-        <li><span class="ar">إنتاج النشاء والجلوكوز من الذرة الصفراء</span><span class="en">Starch and glucose produced from yellow corn</span></li>
-        <li><span class="ar">منتجات تدخل في العديد من الصناعات الغذائية</span><span class="en">Products used across many food industries</span></li>
-        <li><span class="ar">رقابة جودة في جميع مراحل التشغيل</span><span class="en">Quality control at every stage of operation</span></li>
-      </ul>
-      <button class="btn btn--line" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreText"><span class="ar">اعرف المزيد</span><span class="en">Learn more</span></button>
-      <div class="more" id="moreText" hidden>
-        <p><span class="ar">نجاحنا يعتمد على تقديم منتجات عالية الجودة تلبي توقعات العملاء وتتجاوزها، وعلى ضمان جودة وسلامة جميع المنتجات المصنّعة. ولهذا نعتمد نظام رقابة دورية في جميع مراحل التشغيل، لاكتشاف أي انحرافات مبكرًا واتخاذ الإجراءات اللازمة لحماية صحة المستهلك وجودة المنتج وفق المعايير الدولية.</span><span class="en">Our success depends on providing high-quality products that meet and exceed customer expectations, and on ensuring the quality and food safety of every product we manufacture. That is why we run periodic monitoring across all stages of operation, to catch any deviation early and take the necessary measures to protect consumer health and product quality in line with international standards.</span></p>
-      </div>
-    </div>
-    <figure class="photo rv" style="margin:0"><img src="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" srcset="https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(max-width: 860px) 100vw, 50vw" alt="معدات تصنيع من الستانلس ستيل" loading="lazy" decoding="async"></figure>
-  </div>
-</section>
-
-<!-- ============ 3. Products ============ -->
-<section class="section" id="products">
-  <div class="wrap">
-    <div class="head rv">
-      <div>
-        <span class="eyebrow"><span class="ar">منتجاتنا</span><span class="en">Our products</span></span>
-        <h2 class="title"><span class="ar">منتجات مستخلصة من الذرة الصفراء</span><span class="en">Products extracted from yellow corn</span></h2>
-        <p class="lead"><span class="ar">خمسة منتجات من مصنع ماستر فود. اضغط على أي منتج لعرض تفاصيله.</span><span class="en">Five products from the Master Food factory. Open any product for details.</span></p>
-      </div>
-      <a class="btn btn--line btn--sm" href="#contact"><span class="ar">اطلب عرض سعر</span><span class="en">Request a quote</span></a>
-    </div>
-    <div class="products">
-      <article class="card rv">
-        <div class="card__img"><img src="assets/img/corn-starch.webp" alt="نشاء الذرة" width="920" height="554" loading="lazy" decoding="async"></div>
-        <div class="card__body">
-          <span class="card__en">Corn Starch</span>
-          <h3><span class="ar">نشاء الذرة</span><span class="en">Corn Starch</span></h3>
-          <p><span class="ar">مسحوق أبيض طبيعي، عديم الرائحة، ذو طعم متعادل.</span><span class="en">A natural white powder, odorless, with a neutral taste.</span></p>
-          <button class="btn btn--line btn--sm" type="button" data-product="corn-starch"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="card__img"><img src="assets/img/glucose-syrup.webp" alt="شراب الجلوكوز" width="920" height="554" loading="lazy" decoding="async"></div>
-        <div class="card__body">
-          <span class="card__en">Glucose Syrup</span>
-          <h3><span class="ar">شراب الجلوكوز</span><span class="en">Glucose Syrup</span></h3>
-          <p><span class="ar">شراب مركّز ومنقّى من السكر الطبيعي، يُحصل عليه من نشاء الذرة.</span><span class="en">A concentrated, purified syrup of natural sugar obtained from corn starch.</span></p>
-          <button class="btn btn--line btn--sm" type="button" data-product="glucose-syrup"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="card__img"><img src="assets/img/corn-germ.webp" alt="جنين الذرة" width="920" height="554" loading="lazy" decoding="async"></div>
-        <div class="card__body">
-          <span class="card__en">Corn Germ</span>
-          <h3><span class="ar">جنين الذرة</span><span class="en">Corn Germ</span></h3>
-          <p><span class="ar">منتج طبيعي يُحصل عليه خلال مرحلة إنتاج النشا من الذرة.</span><span class="en">A natural product obtained during starch production from corn.</span></p>
-          <button class="btn btn--line btn--sm" type="button" data-product="corn-germ"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="card__img"><img src="assets/img/gluten-feed.webp" alt="جلوتوفيد 16%" width="920" height="554" loading="lazy" decoding="async"></div>
-        <div class="card__body">
-          <span class="card__en">Glutofed 16%</span>
-          <h3><span class="ar">جلوتوفيد 16%</span><span class="en">Glutofed 16%</span></h3>
-          <p><span class="ar">يُستخدم في أعلاف الماشية كمصدر للطاقة والبروتين.</span><span class="en">Used in livestock feed as a source of energy and protein.</span></p>
-          <button class="btn btn--line btn--sm" type="button" data-product="gluten-feed"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="card__img"><img src="assets/img/gluten-meal.webp" alt="جلوتين ميل 60%" width="920" height="554" loading="lazy" decoding="async"></div>
-        <div class="card__body">
-          <span class="card__en">Gluten Meal 60%</span>
-          <h3><span class="ar">جلوتين ميل 60%</span><span class="en">Gluten Meal 60%</span></h3>
-          <p><span class="ar">مصدر غني بالبروتين بنسبة لا تقل عن 60%، يُحصل عليه خلال مرحلة إنتاج النشا من الذرة.</span><span class="en">A rich protein source of at least 60%, obtained during starch production from corn.</span></p>
-          <button class="btn btn--line btn--sm" type="button" data-product="gluten-meal"><span class="ar">التفاصيل</span><span class="en">Details</span></button>
-        </div>
-      </article>
-    </div>
-  </div>
 </section>
 
 <!-- ============ 4. Why Master Food ============ -->
