@@ -209,12 +209,10 @@ html[lang="ar"] .hero__logo b.en, html[lang="en"] .hero__logo b.ar, html[lang="a
 .ocard.is-active .btn { display: inline-flex; margin-top: 10px; min-height: 36px; padding: 0 16px; font-size: .8125rem; }
 .ocard.is-active h3 { color: var(--red); }
 
-.orbit__hint { display: flex; align-items: center; justify-content: center; gap: 8px; text-align: center; font-size: .875rem; color: var(--ink-2); margin-top: 14px; }
 
 /* Without JS: simple list under the corn */
 html:not(.js) .orbit { height: auto; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding-top: 520px; }
 html:not(.js) .ocard { position: static; transform: none; }
-html:not(.js) .orbit__hint { display: none; }
 
 @media (max-width: 700px) {
   .orbit { height: 470px; }
