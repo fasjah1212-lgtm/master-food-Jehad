@@ -85,9 +85,22 @@ html[dir="rtl"] .btn .flip { transform: scaleX(-1); }
 
 /* ---------- Header ---------- */
 /* Solid from the start and fixed to the top while scrolling */
-/* Header: one full-width white bar, fixed to the top; it stays with you while scrolling. */
-.hdr { position: fixed; top: 0; inset-inline: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); background: var(--white); color: var(--ink); box-shadow: 0 1px 0 var(--line); transition: box-shadow .3s; }
-.hdr.is-solid { box-shadow: 0 8px 24px -12px rgba(40, 20, 10, .3); }
+/* Header: a full white bar at the top of the page; once you scroll it pops
+   down as a floating rounded bar and stays with you. */
+.hdr { position: fixed; top: 0; inset-inline: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); background: var(--white); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+.hdr.is-solid {
+  top: calc(env(safe-area-inset-top, 0px) + 12px); inset-inline: 16px; max-width: 1240px; margin-inline: auto;
+  padding-top: 0; border-radius: 999px; box-shadow: 0 14px 34px -14px rgba(40, 20, 10, .35), 0 0 0 1px rgba(0, 0, 0, .05);
+  background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
+  animation: hdrPop .5s cubic-bezier(.2, .9, .3, 1.2) both;
+}
+.hdr.is-solid .hdr__in { height: 64px; padding-inline: 20px 12px; }
+@keyframes hdrPop { from { transform: translateY(-140%); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (max-width: 960px) {
+  .hdr.is-solid { inset-inline: 10px; }
+  .hdr.is-solid .hdr__in { padding-inline: 14px 10px; }
+  .hdr.is-solid .nav { top: calc(100% + 8px); border-radius: 18px; border-top: 0; }
+}
 
 .hdr__in { height: var(--header-h); display: flex; align-items: center; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
