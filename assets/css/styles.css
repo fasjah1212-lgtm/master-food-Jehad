@@ -8,8 +8,6 @@
   /* From the Master Food logo */
   --red: #b71b22;            /* logo text red — primary */
   --red-dark: #8f141a;
-  --red-bright: #e41f28;     /* logo shield red — use sparingly */
-  --red-soft: #fbeceb;
   --leaf: #2f8f3c;           /* logo green (#3ca949), darkened for text contrast */
   --leaf-soft: #eaf5ec;
   --gold: #e9c350;           /* logo gold rim / corn — accent only */
@@ -180,7 +178,6 @@ html[lang="ar"] .hero__logo b.en, html[lang="en"] .hero__logo b.ar, html[lang="a
 .show__head h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.3; max-width: 30ch; }
 .show__head h2 em { font-style: normal; color: var(--red); }
 .show__head p { color: var(--ink-2); }
-.show__ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
 
 .orbit { position: relative; height: clamp(500px, 40vw, 560px); max-width: 1100px; margin: 8px auto 0; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; outline: none; }
 .orbit.is-dragging { cursor: grabbing; }
@@ -227,7 +224,6 @@ html:not(.js) .ocard { position: static; transform: none; }
   .ocard.is-active .ocard__thumb { width: 40px; height: 40px; }
   .ocard.is-active p { font-size: .8125rem; }
 }
-@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 /* ---------- About (split) ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
@@ -242,23 +238,6 @@ html:not(.js) .ocard { position: static; transform: none; }
 .split--flip .photo { order: 2; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; } .split--flip .photo { order: 0; } }
 
-/* ---------- Products ---------- */
-.products { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
-.card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; transition: box-shadow .25s, transform .25s, border-color .25s; }
-.card:hover { box-shadow: var(--sh); transform: translateY(-3px); border-color: transparent; }
-.card__img { aspect-ratio: 4 / 3; background: var(--cream); overflow: hidden; }
-.card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
-.card:hover .card__img img { transform: scale(1.04); }
-.card__body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.card__en { font: 500 .75rem/1 var(--f-en); letter-spacing: .06em; color: var(--ink-2); text-transform: uppercase; }
-.card h3 { font-size: 1.125rem; }
-.card p { font-size: .9rem; color: var(--ink-2); line-height: 1.7; }
-.card .btn { align-self: flex-start; margin-top: auto; }
-.card h3 + .btn, .card p + .btn { margin-top: auto; }
-.card__body > .btn { margin-top: auto; }
-@media (max-width: 1100px) { .products { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 720px) { .products { grid-template-columns: repeat(2, 1fr); gap: 12px; } .card__body { padding: 14px; } .card p { display: none; } }
-@media (max-width: 380px) { .products { grid-template-columns: 1fr; } .card p { display: block; } }
 
 /* ---------- Why ---------- */
 .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
@@ -376,7 +355,6 @@ html[dir="rtl"] .citem b.ltr { text-align: right; }
 .pd__facts dd { margin: 0; font-weight: 700; text-align: end; }
 .pd__x { position: absolute; top: 12px; inset-inline-end: 12px; z-index: 2; width: 42px; height: 42px; border-radius: 50%; border: 0; background: rgba(255,255,255,.95); box-shadow: var(--sh); cursor: pointer; display: grid; place-items: center; }
 .pd__x svg { width: 18px; height: 18px; stroke: var(--ink); stroke-width: 2; fill: none; }
-.pd__note { font-size: .875rem; }
 body.lock { overflow: hidden; }
 @keyframes fade { from { opacity: 0; } }
 @media (max-width: 760px) { .pd { padding: 0; place-items: end center; } .pd__box { grid-template-columns: 1fr; border-radius: var(--r-lg) var(--r-lg) 0 0; max-height: 92vh; max-height: 92dvh; } .pd__img img { min-height: 0; aspect-ratio: 16 / 10; } }

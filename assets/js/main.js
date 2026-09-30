@@ -7,7 +7,6 @@
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isAr = () => root.lang !== 'en';
   const t = (o) => (typeof o === 'string' ? o : o[isAr() ? 'ar' : 'en']);
-  const px = (id, w) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
   /* Product content — taken from the official master-food.co pages. */
   const PRODUCTS = {
@@ -83,7 +82,7 @@
     const p = PRODUCTS[id], ar = isAr();
     const img = $('#pd-img');
     img.parentElement.classList.remove('noimg');
-    img.src = typeof p.img === 'number' ? px(p.img, 1200) : p.img; img.alt = t(p.name);
+    img.src = p.img; img.alt = t(p.name);
     $('#pd-body').innerHTML = `
       <span class="eyebrow">${ar ? 'منتجاتنا' : 'Our products'}</span>
       <h2 id="pd-title">${t(p.name)}</h2>
