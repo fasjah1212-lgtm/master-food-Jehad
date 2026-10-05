@@ -223,6 +223,28 @@
     measure(); rot = target = 1; render();
   })();
 
+  /* ---------- Always open at the top of the page ----------
+     The browser would otherwise restore the last scroll position, or jump to a
+     section anchor (#products, #quality…) left in the address bar. */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const startHash = location.hash.slice(1);
+  if (startHash && !PRODUCTS[startHash]) history.replaceState(null, '', location.pathname + location.search);
+  scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  addEventListener('pageshow', (e) => { if (e.persisted) scrollTo({ top: 0, left: 0, behavior: 'instant' }); });
+
+  // Menu and button links scroll to their section without adding an anchor to the address.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    if (!id || PRODUCTS[id]) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    if (id === 'home') scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' });
+    else el.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+  });
+
   $('#yr').textContent = new Date().getFullYear();
   syncHash();
 })();
