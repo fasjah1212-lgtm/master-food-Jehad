@@ -190,9 +190,8 @@ html[lang="ar"] .hero__logo b.en, html[lang="en"] .hero__logo b.ar, html[lang="a
   position: absolute; left: 50%; top: 62%; width: 250px; transform-origin: 50% 0;
   display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start;
   padding: 14px; border-radius: 18px;
-  background: rgba(255, 255, 255, .9); border: 1px solid rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .96); border: 1px solid rgba(255, 255, 255, .8);
   box-shadow: 0 16px 36px -18px rgba(40, 25, 10, .45);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   transform: translateX(-50%); will-change: transform, opacity; cursor: pointer;
   transition: box-shadow .3s, border-color .3s;
 }
@@ -205,6 +204,7 @@ html[lang="ar"] .hero__logo b.en, html[lang="en"] .hero__logo b.ar, html[lang="a
 .ocard.is-active p { display: block; font-size: .875rem; color: var(--ink-2); line-height: 1.65; margin-top: 4px; }
 .ocard.is-active .btn { display: inline-flex; margin-top: 10px; min-height: 36px; padding: 0 16px; font-size: .8125rem; }
 .ocard.is-active h3 { color: var(--red); }
+.ocard.is-active .ocard__text { animation: fade .3s ease both; }
 
 
 /* Without JS: simple list under the corn */

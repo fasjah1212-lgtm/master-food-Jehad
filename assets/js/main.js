@@ -149,8 +149,12 @@
       gap2 = mobile ? 60 : Math.min(w * 0.2, 220);
     }
     const mod = (n) => ((n % N) + N) % N;
+    // The active card is the one the row is heading to; while dragging it stays the
+    // one that was active when the drag started, so cards don't resize mid-swipe.
+    let lastActive = -1, frozen = null;
     function render() {
-      const active = mod(Math.round(rot));
+      const active = frozen !== null ? frozen : mod(Math.round(target));
+      const changed = active !== lastActive; lastActive = active;
       cards.forEach((c, i) => {
         // signed distance from the centre slot, wrapped to [-N/2, N/2)
         const k = mod(i - rot + N / 2) - N / 2, a = Math.abs(k);
@@ -161,6 +165,7 @@
         c.style.opacity = fade.toFixed(3);
         c.style.zIndex = 100 - Math.round(a * 10);
         c.style.pointerEvents = fade < 0.15 ? 'none' : '';
+        if (!changed) return;
         const on = i === active;
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-hidden', String(!on));
@@ -185,27 +190,38 @@
     }
     const move = (dir) => { target = Math.round(target) + dir; animate(); announce(); };
 
-    // Drag / swipe
-    let down = false, dragging = false, x0 = 0, rot0 = 0, pid = null;
+    // Drag / swipe — one redraw per frame, finger position tracked on every move
+    let down = false, dragging = false, x0 = 0, lastX = 0, rot0 = 0, pid = null, frame = 0;
+    let vx = 0, lastT = 0;
     box.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
-      down = true; dragging = false; x0 = e.clientX; rot0 = rot; pid = e.pointerId;
+      down = true; dragging = false; x0 = lastX = e.clientX; rot0 = rot; pid = e.pointerId;
+      vx = 0; lastT = e.timeStamp;
       cancelAnimationFrame(raf);
     });
     box.addEventListener('pointermove', (e) => {
       if (!down) return;
-      const dx = e.clientX - x0;
-      if (!dragging && Math.abs(dx) > 6) { dragging = true; box.classList.add('is-dragging'); try { box.setPointerCapture(pid); } catch (err) { /* ignore */ } }
-      if (dragging) { rot = rot0 - dx / gap1; render(); }
+      const dt = Math.max(1, e.timeStamp - lastT);
+      vx = 0.8 * vx + 0.2 * ((e.clientX - lastX) / dt);
+      lastX = e.clientX; lastT = e.timeStamp;
+      const dx = lastX - x0;
+      if (!dragging && Math.abs(dx) > 6) {
+        dragging = true; frozen = lastActive; box.classList.add('is-dragging');
+        try { box.setPointerCapture(pid); } catch (err) { /* ignore */ }
+      }
+      if (dragging && !frame) frame = requestAnimationFrame(() => { frame = 0; rot = rot0 - (lastX - x0) / gap1; render(); });
     });
-    const end = (e) => {
+    const end = () => {
       if (!down) return; down = false;
+      cancelAnimationFrame(frame); frame = 0;
       if (!dragging) { rot = rot0; return; }
       box.classList.remove('is-dragging');
-      const dx = e.clientX - x0;
+      const dx = lastX - x0; // pointercancel can report 0 as its position on phones
+      rot = rot0 - dx / gap1;
       let t2 = Math.round(rot);
-      if (t2 === Math.round(rot0) && Math.abs(dx) > 40) t2 = Math.round(rot0) - Math.sign(dx);
-      target = t2; animate(); announce();
+      const fling = Math.abs(vx) > 0.35 || Math.abs(dx) > 40;
+      if (t2 === Math.round(rot0) && fling && dx) t2 = Math.round(rot0) - Math.sign(dx);
+      frozen = null; target = t2; animate(); announce();
       box.dataset.justDragged = '1'; setTimeout(() => delete box.dataset.justDragged, 50);
     };
     box.addEventListener('pointerup', end); box.addEventListener('pointercancel', end);
